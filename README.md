@@ -1,408 +1,273 @@
-# Dr. Semiu Akanni, AYINDE - Professional Portfolio Website
+# Dr. Semiu Akanni, AYINDE - Professional Portfolio
 
-## 🚀 Project Status: PRODUCTION READY
+A modern, image-rich, responsive, and accessible portfolio website built with Next.js and Tailwind CSS for Dr. Semiu Akanni, AYINDE - Director at the Office of The Surveyor General of the Federation (OSGOF).
 
-A modern, professional portfolio website showcasing Dr. Semiu Akanni's 25+ years of experience in surveying, geo-informatics, and government leadership.
+## ✨ What's New (v2.0)
 
-**Live URL** (after deployment): `https://portfolio-semiu-xyz.vercel.app`
+- 🖼️ **Professional Images** - High-quality portraits and professional photos
+- 🎨 **Redesigned Homepage** - Modern image-first hero layout
+- ⚡ **Enhanced Visual Design** - Better spacing, colors, and animations
+- ❌ **No PDF Downloads** - CV content integrated into About page
+- 📱 **Improved Mobile UX** - Better responsive layouts and interactions
 
----
+## Features
 
-## 📋 Quick Navigation
+✅ **Professional Images** - Showcase with responsive image gallery
+✅ **Fully Responsive Design** - Optimized for mobile (320px), tablet, and desktop (1440px+)
+✅ **Accessible** - WCAG 2.1 AA compliant with semantic HTML, ARIA labels, and keyboard navigation
+✅ **SEO Optimized** - Meta tags, Open Graph, JSON-LD structured data, and robots.txt
+✅ **Contact Form** - Email integration with rate limiting and spam protection (honeypot)
+✅ **CV Integration** - Complete curriculum vitae on About page
+✅ **Performance Optimized** - Lighthouse score target ≥ 90
+✅ **Production Ready** - Ready for deployment to Vercel  
 
-- **[PROJECT_SUMMARY.md](./portfolio-semiu/PROJECT_SUMMARY.md)** - Complete project overview
-- **[README.md](./portfolio-semiu/README.md)** - Main documentation
-- **[DEPLOYMENT.md](./portfolio-semiu/DEPLOYMENT.md)** - Step-by-step deployment guide
-- **[QA_CHECKLIST.md](./portfolio-semiu/QA_CHECKLIST.md)** - Pre-deployment QA checklist
-- **[SETUP.md](./portfolio-semiu/SETUP.md)** - Development setup guide
+## Pages
 
----
+- **Home** - Hero section with professional headline, contact CTA, and highlights
+- **About & CV** - Comprehensive professional biography, education, certifications, work experience, and appointments
+- **Projects** - 50+ executed projects organized by category (Government, Survey, Piling, Infrastructure)
+- **Contact** - Email form with validation and contact methods
 
-## ✅ Completed Features
+## Tech Stack
 
-### Pages
-- ✅ **Home** - Hero section with professional headline, quick contact info, and CTA buttons
-- ✅ **About & CV** - Complete professional biography, education, experience, and credentials
-- ✅ **Projects** - 50+ executed projects organized by category
-- ✅ **Contact** - Email form with validation and spam protection
-- ✅ **404** - Error page
+- **Framework**: Next.js 14+
+- **Styling**: Tailwind CSS
+- **Email**: Nodemailer (SMTP)
+- **PDF Generation**: jsPDF
+- **Icons**: React Icons
+- **Deployment**: Vercel
 
-### Core Features
-- ✅ Responsive design (mobile-first, tested 320px-1440px)
-- ✅ Accessibility (WCAG 2.1 AA compliant)
-- ✅ Contact form with email integration
-- ✅ PDF CV download (dynamically generated)
-- ✅ Keyboard navigation
-- ✅ Mobile-optimized menu
-- ✅ Performance optimized (Lighthouse ≥90)
-- ✅ SEO optimized (meta tags, JSON-LD, sitemap, robots.txt)
-- ✅ Rate limiting for contact form
-- ✅ Honeypot spam protection
+## Environment Variables
 
-### Technical
-- ✅ Next.js 14 framework
-- ✅ Tailwind CSS styling
-- ✅ Nodemailer SMTP integration
-- ✅ jsPDF generation
-- ✅ Playwright tests
-- ✅ Git version control
-- ✅ Environment variables
-- ✅ Production build optimization
+Create a `.env.local` file in the root directory with the following variables:
 
----
-
-## 📂 Project Structure
-
-```
-.
-└── portfolio-semiu/              (Main project directory)
-    ├── src/
-    │   ├── components/           (Reusable React components)
-    │   ├── pages/                (Next.js pages and API routes)
-    │   ├── data/                 (Static CV content as JSON)
-    │   └── styles/               (Global CSS with Tailwind)
-    ├── public/                   (Static files)
-    ├── tests/                    (Playwright test suite)
-    ├── package.json              (Dependencies and scripts)
-    ├── next.config.js            (Next.js configuration)
-    ├── tailwind.config.js        (Tailwind configuration)
-    ├── jsconfig.json             (JavaScript path aliases)
-    ├── vercel.json               (Vercel deployment config)
-    ├── .env.example              (Environment variables template)
-    ├── .gitignore                (Git ignore rules)
-    ├── README.md                 (Main documentation)
-    ├── PROJECT_SUMMARY.md        (Project completion summary)
-    ├── DEPLOYMENT.md             (Deployment instructions)
-    ├── QA_CHECKLIST.md           (QA checklist for deployment)
-    └── SETUP.md                  (Development setup guide)
+```env
+# Email configuration for contact form
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+RECIPIENT_EMAIL=ayindesemiu@yahoo.com
 ```
 
----
+### Gmail Setup (Recommended)
 
-## 🚀 Quick Start
+1. Enable 2-Factor Authentication on your Gmail account
+2. Create an App Password: https://myaccount.google.com/apppasswords
+3. Use the generated 16-character password as `SMTP_PASS`
 
-### 1. Development
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd portfolio-semiu
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create `.env.local` with your email configuration (see above)
+
+4. Run the development server:
+```bash
+npm run dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Development
 
 ```bash
-cd portfolio-semiu
-npm install
-cp .env.example .env.local      # Configure SMTP credentials
-npm run dev                       # Start at http://localhost:3000
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
 ```
 
-### 2. Production Build
+## Project Structure
+
+```
+portfolio-semiu/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx          # Navigation header
+│   │   ├── Footer.jsx          # Footer with contact info
+│   │   ├── ContactForm.jsx     # Email contact form
+│   │   ├── Timeline.jsx        # Timeline component for education/experience
+│   │   └── ProjectCard.jsx     # Project card component
+│   ├── pages/
+│   │   ├── _app.jsx            # App wrapper
+│   │   ├── _document.jsx       # Custom document
+│   │   ├── index.jsx           # Home page
+│   │   ├── about.jsx           # About & CV page
+│   │   ├── projects.jsx        # Projects page
+│   │   └── api/
+│   │       ├── contact.js      # Contact form endpoint
+│   │       └── generate-cv.js  # PDF CV generation endpoint
+│   ├── data/
+│   │   └── cv.json             # Structured CV data
+│   └── styles/
+│       └── globals.css         # Global styles
+├── public/                     # Static files
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
+```
+
+## API Endpoints
+
+### Contact Form (`POST /api/contact`)
+
+Sends an email via SMTP with contact form data.
+
+**Request:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "message": "Your message here"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Email sent successfully"
+}
+```
+
+**Features:**
+- Rate limiting (5 requests per minute per IP)
+- Email validation
+- Honeypot field for spam protection
+- Message length limit (5000 characters)
+
+### Generate CV (`GET /api/generate-cv`)
+
+Generates and downloads a PDF version of the CV.
+
+**Response:** PDF file (application/pdf)
+
+## Deployment
+
+### Deploy to Vercel
+
+1. Push code to GitHub
+2. Connect repository to [Vercel](https://vercel.com)
+3. Add environment variables in Vercel dashboard:
+   - `SMTP_USER`
+   - `SMTP_PASS`
+   - `SMTP_HOST`
+   - `SMTP_PORT`
+   - `RECIPIENT_EMAIL`
+4. Deploy automatically on push
+
+### Alternative: Manual Deployment
 
 ```bash
 npm run build
 npm start
 ```
 
-### 3. Testing
+## Accessibility Features
 
-```bash
-npm run test                      # Run Playwright tests
-npm run test:ui                   # Run with UI
+- ✅ Semantic HTML (header, main, section, nav, footer)
+- ✅ ARIA labels and descriptions
+- ✅ Keyboard navigation (Tab, Enter, Escape)
+- ✅ Focus indicators (visible outlines)
+- ✅ Color contrast ≥ 7:1 (WCAG AAA)
+- ✅ Alt text for all images
+- ✅ Form validation with error messages
+- ✅ Screen reader support
+- ✅ Responsive touch targets (≥44x44px)
+
+## Performance Optimizations
+
+- ✅ Image optimization and lazy loading
+- ✅ CSS-in-JS with Tailwind CSS
+- ✅ Code splitting and dynamic imports
+- ✅ API route optimization
+- ✅ Minification and compression
+
+## Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Testing
+
+### Manual Testing Checklist
+
+- [ ] Desktop layout (1440px) - all sections render correctly
+- [ ] Mobile layout (375px) - responsive and readable
+- [ ] Tablet layout (768px) - medium screen optimization
+- [ ] Contact form submission - email received
+- [ ] PDF CV download - file downloads correctly
+- [ ] All links functional (external and internal)
+- [ ] No console errors in DevTools
+- [ ] Keyboard navigation - all elements accessible via Tab
+- [ ] Form validation - required fields checked
+- [ ] Rate limiting - contact form limits requests
+
+### Lighthouse Testing
+
+Run Lighthouse audit in Chrome DevTools:
+
+```
+Target Scores:
+- Performance: ≥ 90
+- Accessibility: ≥ 95
+- Best Practices: ≥ 90
+- SEO: ≥ 90
 ```
 
-### 4. Deployment
+## Troubleshooting
 
-```bash
-# Push to GitHub (auto-deploys to Vercel)
-git push origin main
-```
+### Contact Form Not Sending Emails
 
----
+1. Check `.env.local` variables are set correctly
+2. Verify SMTP credentials (Gmail requires App Password)
+3. Check that recipient email is correct
+4. Look for error logs in browser console and server console
 
-## 📊 Key Metrics
+### PDF Download Not Working
 
-| Metric | Value |
-|--------|-------|
-| Pages | 4 main + API |
-| Components | 5 reusable |
-| Project Entries | 50+ |
-| Education Entries | 6 |
-| Work Experience Entries | 8+ |
-| Awards | 17 |
-| Publications | 6 |
-| Lighthouse Performance | ≥90 |
-| Lighthouse Accessibility | ≥95 |
-| Mobile Breakpoint Support | 320px-1440px |
+1. Clear browser cache
+2. Check that `/api/generate-cv` endpoint responds with PDF
+3. Verify jsPDF is installed: `npm install jspdf`
 
----
+### Mobile Layout Issues
 
-## 👤 Profile Information
+1. Clear browser cache
+2. Check viewport meta tag in `_document.jsx`
+3. Test in Chrome DevTools device emulation
+4. Verify Tailwind CSS responsive classes
 
-**Name:** Dr. Semiu Akanni, AYINDE  
-**Title:** Director, Internal Boundary Department  
-**Organization:** Office of The Surveyor General of the Federation (OSGOF)  
-**Email:** ayindesemiu@yahoo.com  
-**Phone:** +234 803 402 5477 / +234 802 428 0611  
-**Location:** Lagos, Nigeria
-
----
-
-## 📋 Data Included
-
-The portfolio includes comprehensive information:
-
-- **Education:** 6 educational qualifications (2002-2021)
-- **Certifications:** 8 professional certifications
-- **Work Experience:** 8+ positions (1998-2025)
-- **Projects:** 50+ executed projects
-- **Appointments:** 10+ leadership roles
-- **Memberships:** 6 professional fellowships
-- **Awards:** 17 awards and recognitions
-- **Publications:** 6 publications
-- **Conferences:** 9 conferences attended
-
----
-
-## 🔧 Technology Stack
-
-- **Framework:** Next.js 14
-- **Styling:** Tailwind CSS 3.3
-- **Email:** Nodemailer + SMTP
-- **PDF:** jsPDF
-- **Icons:** React Icons
-- **Testing:** Playwright
-- **Deployment:** Vercel
-- **VCS:** Git/GitHub
-
----
-
-## 🌐 Features in Detail
-
-### Responsive Design
-- Mobile-first approach
-- Tested at 320px, 375px, 768px, 1440px
-- No horizontal scrolling
-- Touch-friendly buttons (≥44x44px)
-
-### Accessibility
-- Semantic HTML
-- ARIA labels
-- Keyboard navigation (Tab, Enter, Escape)
-- Color contrast ≥7:1 (WCAG AAA)
-- Screen reader support
-
-### Performance
-- First Load JS: 88 kB
-- Core Web Vitals optimized
-- CSS minification
-- Image optimization
-- Code splitting
-
-### Security
-- Input validation
-- Honeypot field
-- Rate limiting (5 req/min)
-- HTTPS enforced
-- No hardcoded secrets
-
-### SEO
-- Meta descriptions
-- Open Graph tags
-- JSON-LD structured data
-- sitemap.xml
-- robots.txt
-
----
-
-## 📱 Responsive Breakpoints
-
-| Device | Width | Status |
-|--------|-------|--------|
-| Mobile (iPhone) | 375px | ✅ Optimized |
-| Mobile (Small) | 320px | ✅ Optimized |
-| Tablet | 768px | ✅ Responsive |
-| Desktop | 1440px | ✅ Full Width |
-
----
-
-## 📧 Email Setup
-
-For contact form to work, configure SMTP:
-
-1. **Create Gmail App Password:**
-   - Enable 2FA on Gmail account
-   - Visit https://myaccount.google.com/apppasswords
-   - Select "Mail" and "Windows Computer"
-   - Copy 16-character password
-
-2. **Set Environment Variables:**
-   ```
-   SMTP_USER=your-email@gmail.com
-   SMTP_PASS=16-character-app-password
-   SMTP_HOST=smtp.gmail.com
-   SMTP_PORT=587
-   RECIPIENT_EMAIL=ayindesemiu@yahoo.com
-   ```
-
-3. **Test Locally:**
-   ```bash
-   npm run dev
-   # Fill contact form and submit
-   # Check your email for test message
-   ```
-
----
-
-## 🚢 Deployment to Vercel
-
-### Prerequisites
-- GitHub account
-- Vercel account
-- Git installed
-
-### Steps
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Add environment variables
-4. Deploy (auto on push)
-
-**Full instructions:** See [DEPLOYMENT.md](./portfolio-semiu/DEPLOYMENT.md)
-
----
-
-## ✅ QA Checklist
-
-Before deploying:
-- [ ] All pages load without errors
-- [ ] Contact form sends emails
-- [ ] PDF CV downloads
-- [ ] Responsive at 320px and 1440px
-- [ ] Keyboard navigation works
-- [ ] No console errors
-- [ ] Lighthouse scores ≥90
-- [ ] All links functional
-
-**Full checklist:** See [QA_CHECKLIST.md](./portfolio-semiu/QA_CHECKLIST.md)
-
----
-
-## 📖 Documentation
-
-### Main Files
-- **README.md** - Feature overview and quick start
-- **PROJECT_SUMMARY.md** - Complete project summary
-- **DEPLOYMENT.md** - Step-by-step deployment guide
-- **QA_CHECKLIST.md** - Pre-deployment QA verification
-- **SETUP.md** - Development environment setup
-
-### Code Documentation
-- **`src/data/cv.json`** - Structured CV content
-- **`src/components/`** - Reusable components with comments
-- **`src/pages/`** - Page files with inline documentation
-- **`tests/`** - Playwright test suite
-
----
-
-## 🧪 Testing
-
-### Manual Testing
-```bash
-npm run dev
-# Test home, about, projects pages
-# Test contact form
-# Test PDF download
-# Test mobile (DevTools)
-```
-
-### Automated Testing
-```bash
-npm run test              # Run all tests
-npm run test:ui          # Run with UI
-npm run test --debug     # Debug mode
-```
-
----
-
-## 🔐 Security
-
-- ✅ Input validation on all forms
-- ✅ Rate limiting on contact API
-- ✅ Honeypot field prevents bots
-- ✅ Email validation (RFC standard)
-- ✅ No sensitive data in logs
-- ✅ HTTPS enforced (Vercel)
-- ✅ Environment variables protected
-- ✅ CORS headers configured
-
----
-
-## 📊 Performance Targets
-
-| Metric | Target | Status |
-|--------|--------|--------|
-| Lighthouse Performance | ≥90 | ✅ |
-| Lighthouse Accessibility | ≥95 | ✅ |
-| Lighthouse Best Practices | ≥90 | ✅ |
-| Lighthouse SEO | ≥90 | ✅ |
-| FCP | <2.5s | ✅ |
-| LCP | <2.5s | ✅ |
-| CLS | <0.1 | ✅ |
-
----
-
-## 🛠️ Common Commands
-
-```bash
-# Development
-npm run dev              # Start dev server
-npm run build            # Production build
-npm start               # Start production server
-
-# Testing
-npm run test            # Run tests
-npm run test:ui         # Run tests with UI
-npm run lint            # Run ESLint
-
-# Maintenance
-npm update              # Update dependencies
-npm audit               # Check security
-npm audit fix           # Fix vulnerabilities
-```
-
----
-
-## 📞 Contact Information
-
-**Dr. Semiu Akanni, AYINDE**
-- Email: ayindesemiu@yahoo.com
-- Phone: +234 803 402 5477
-- Address: Hse 3, Ajagungbade Street, Ikosi Ketu, Lagos
-
----
-
-## 📝 License
+## License
 
 © 2025 Dr. Semiu Akanni, AYINDE. All rights reserved.
 
----
+## Contact
 
-## 🎯 Next Steps
-
-1. ✅ Review PROJECT_SUMMARY.md
-2. ✅ Follow DEPLOYMENT.md for deployment
-3. ✅ Configure SMTP credentials
-4. ✅ Push to GitHub
-5. ✅ Connect to Vercel
-6. ✅ Monitor first week
+- **Email**: ayindesemiu@yahoo.com
+- **Phone**: +234 803 402 5477
+- **Address**: Hse 3, Ajagungbade Street, Ikosi Ketu, Lagos, Nigeria
 
 ---
 
-## 📖 Version
-
-- **Version:** 1.0.0
-- **Status:** Production Ready
-- **Last Updated:** October 24, 2025
-- **Build:** Successful
-- **Tests:** Passing
-
----
-
-**🚀 Ready to Deploy!**
-
-For deployment instructions, see [DEPLOYMENT.md](./portfolio-semiu/DEPLOYMENT.md)
-
-For complete documentation, see [README.md](./portfolio-semiu/README.md)
+**Built with ❤️ using Next.js and Tailwind CSS**

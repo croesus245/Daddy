@@ -1,5 +1,0 @@
-# Sitemap
-User-agent: *
-Allow: /
-
-Sitemap: https://semiu-akanni.vercel.app/sitemap.xml
