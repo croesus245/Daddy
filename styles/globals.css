@@ -1,21 +1,29 @@
 /* ============================================
-   DESIGN SYSTEM & GLOBAL STYLES
+   GOLD & BLACK DESIGN SYSTEM - GLOBALS
    ============================================ */
 
 :root {
-  /* Colors */
-  --color-primary: #1a1a1a;
-  --color-secondary: #4a4a4a;
-  --color-accent: #0066cc;
-  --color-accent-light: #e6f0ff;
-  --color-bg: #ffffff;
-  --color-bg-light: #f9f9f9;
-  --color-border: #e0e0e0;
-  --color-text: #1a1a1a;
-  --color-text-light: #666666;
-  --color-text-muted: #999999;
+  /* Brand Colors - Gold & Black */
+  --brand-gold: #D4AF37;
+  --brand-black: #000000;
+  --brand-white: #ffffff;
+  --brand-muted: #f5f5f5;
 
-  /* Spacing (8px base) */
+  /* Functional Colors */
+  --color-primary: var(--brand-black);
+  --color-accent: var(--brand-gold);
+  --color-bg: var(--brand-black);
+  --color-bg-light: #111111;
+  --color-text: var(--brand-white);
+  --color-text-light: #cccccc;
+  --color-text-muted: #999999;
+  --color-border: #333333;
+
+  /* Spacing System */
+  --gap-xs: 0.5rem;
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 3rem;
   --sp-xs: 0.5rem;
   --sp-sm: 1rem;
   --sp-md: 1.5rem;
@@ -23,23 +31,29 @@
   --sp-xl: 3rem;
   --sp-2xl: 4rem;
 
-  /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  /* prefer Inter */
-  --font-sans-preferred: 'Inter', var(--font-sans);
+  /* Typography - Fluid Scaling */
+  --font-xs: clamp(0.75rem, 0.9vw, 0.875rem);
+  --font-sm: clamp(0.875rem, 1vw, 1rem);
+  --font-base: clamp(1rem, 1.2vw, 1.125rem);
+  --font-lg: clamp(1.125rem, 1.5vw, 1.375rem);
+  --font-xl: clamp(1.375rem, 2vw, 1.75rem);
+  --font-2xl: clamp(1.75rem, 2.5vw, 2.25rem);
+  --font-3xl: clamp(2.25rem, 3.5vw, 3rem);
+  --font-4xl: clamp(3rem, 5vw, 4.5rem);
+
+  /* Font Families */
+  --font-sans: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-mono: 'Monaco', 'Courier New', monospace;
+
+  /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-
-  /* Responsive sizing with clamp */
-  --font-sm: clamp(0.875rem, 0.9vw, 1rem);
-  --font-base: clamp(1rem, 1.1vw, 1.125rem);
-  --font-lg: clamp(1.125rem, 1.4vw, 1.375rem);
-  --font-xl: clamp(1.25rem, 1.8vw, 1.75rem);
-  --font-2xl: clamp(1.5rem, 2.2vw, 2.25rem);
-  --font-3xl: clamp(1.875rem, 3vw, 2.75rem);
-  --font-4xl: clamp(2.25rem, 4vw, 3.5rem);
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
   /* Line Heights */
   --lh-tight: 1.2;
@@ -47,9 +61,9 @@
   --lh-relaxed: 1.75;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --shadow-sm: 0 1px 2px rgba(212, 175, 55, 0.1);
+  --shadow-md: 0 4px 12px rgba(212, 175, 55, 0.15);
+  --shadow-lg: 0 12px 24px rgba(212, 175, 55, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
@@ -57,10 +71,17 @@
   --transition-slow: 300ms ease-in-out;
 
   /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Z-Index */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 999;
 }
 
 /* Reset & Base Styles */
@@ -75,7 +96,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans-preferred);
+  font-family: var(--font-sans);
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: var(--lh-normal);
@@ -143,18 +164,18 @@ p {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--brand-gold);
   text-decoration: none;
-  transition: color var(--transition-base);
+  transition: color var(--transition-base), opacity var(--transition-base);
 }
 
 a:hover {
-  color: #0052a3;
+  color: #e8c547;
   text-decoration: underline;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--brand-gold);
   outline-offset: 2px;
 }
 
@@ -162,16 +183,54 @@ a:focus-visible {
 input, textarea, select {
   font-family: var(--font-sans);
   font-size: var(--font-base);
+  background-color: var(--color-bg-light);
+  color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: var(--sp-sm);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-base);
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-light);
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+button {
+  font-family: var(--font-sans);
+  font-size: var(--font-base);
+  font-weight: var(--font-weight-semibold);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background-color: var(--brand-gold);
+  color: var(--brand-black);
+}
+
+button:hover {
+  background-color: #e8c547;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Images */
@@ -193,10 +252,11 @@ img {
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.9);
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
   backdrop-filter: saturate(180%) blur(6px);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-  z-index: 60;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  z-index: var(--z-sticky);
 }
 
 .nav-inner {
@@ -250,22 +310,25 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
-  color: white;
+  background-color: var(--brand-gold);
+  color: var(--brand-black);
 }
 
 .btn-primary:hover {
-  background-color: #0052a3;
+  background-color: #e8c547;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .btn-secondary {
   background-color: var(--color-bg-light);
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--brand-gold);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-border);
+  background-color: rgba(212, 175, 55, 0.1);
+  border-color: #e8c547;
 }
 
 .btn:disabled {
