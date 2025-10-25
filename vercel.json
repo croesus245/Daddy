@@ -4,25 +4,10 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "env": {
-    "SMTP_USER": {
-      "value": "",
-      "type": "secret"
-    },
-    "SMTP_PASS": {
-      "value": "",
-      "type": "secret"
-    },
-    "SMTP_HOST": {
-      "value": "smtp.gmail.com",
-      "type": "plaintext"
-    },
-    "SMTP_PORT": {
-      "value": "587",
-      "type": "plaintext"
-    },
-    "RECIPIENT_EMAIL": {
-      "value": "ayindesemiu@yahoo.com",
-      "type": "plaintext"
-    }
+    "SMTP_USER": "",
+    "SMTP_PASS": "",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "RECIPIENT_EMAIL": "ayindesemiu@yahoo.com"
   }
 }
