@@ -1,0 +1,33 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": [
+    {
+      "key": "SMTP_USER",
+      "value": "",
+      "type": "secret"
+    },
+    {
+      "key": "SMTP_PASS",
+      "value": "",
+      "type": "secret"
+    },
+    {
+      "key": "SMTP_HOST",
+      "value": "smtp.gmail.com",
+      "type": "plaintext"
+    },
+    {
+      "key": "SMTP_PORT",
+      "value": "587",
+      "type": "plaintext"
+    },
+    {
+      "key": "RECIPIENT_EMAIL",
+      "value": "ayindesemiu@yahoo.com",
+      "type": "plaintext"
+    }
+  ]
+}
