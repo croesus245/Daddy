@@ -93,7 +93,7 @@ export default function Home() {
             .hero-title {
               font-size: var(--font-3xl);
               font-weight: var(--font-weight-bold);
-              color: var(--color-text);
+              color: var(--brand-gold);
               margin: 0 0 var(--sp-xs) 0;
               line-height: 1.1;
             }
@@ -101,7 +101,7 @@ export default function Home() {
             .hero-role {
               font-size: var(--font-xl);
               font-weight: var(--font-weight-semibold);
-              color: var(--color-accent);
+              color: var(--brand-gold);
               margin: 0 0 var(--sp-xs) 0;
             }
             
@@ -122,8 +122,8 @@ export default function Home() {
               display: inline-flex;
               align-items: center;
               gap: 0.5rem;
-              background: var(--color-accent);
-              color: white;
+              background: var(--brand-gold);
+              color: var(--brand-black);
               padding: 1rem 1.5rem;
               border-radius: var(--radius-md);
               font-weight: var(--font-weight-semibold);
@@ -134,17 +134,17 @@ export default function Home() {
             }
             
             .hero-cta:hover {
-              background: #0052a3;
+              background: #e8c547;
               transform: translateY(-2px);
-              box-shadow: var(--shadow-md);
+              box-shadow: 0 8px 16px rgba(212, 175, 55, 0.25);
             }
             
             .contact-cards {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
               gap: var(--sp-lg);
-              background: var(--color-bg-light);
-              border: 1px solid var(--color-border);
+              background: var(--color-surface);
+              border: 1px solid var(--brand-gold);
               border-radius: var(--radius-lg);
               padding: var(--sp-2xl) var(--sp-lg);
               margin-top: var(--sp-2xl);
@@ -163,15 +163,15 @@ export default function Home() {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: var(--color-accent);
-              color: white;
+              background: var(--brand-gold);
+              color: var(--brand-black);
               border-radius: var(--radius-md);
             }
             
             .contact-info h4 {
               font-size: var(--font-base);
               font-weight: var(--font-weight-semibold);
-              color: var(--color-text);
+              color: var(--brand-gold);
               margin: 0 0 0.25rem 0;
             }
             
@@ -182,13 +182,13 @@ export default function Home() {
             }
             
             .contact-info a {
-              color: var(--color-accent);
+              color: var(--color-text-light);
               text-decoration: none;
               transition: color var(--transition-base);
             }
             
             .contact-info a:hover {
-              color: #0052a3;
+              color: var(--brand-gold);
               text-decoration: underline;
             }
           `}</style>
@@ -272,15 +272,15 @@ export default function Home() {
         </section>
 
         {/* About Preview Section */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4" style={{ background: 'var(--brand-black)' }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Professional Summary</h2>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mb-8">
+            <h2 style={{ fontSize: 'var(--font-3xl)', fontWeight: 'var(--font-weight-bold)', color: 'var(--brand-gold)', marginBottom: 'var(--sp-lg)' }}>Professional Summary</h2>
+            <p style={{ fontSize: 'var(--font-lg)', color: 'var(--color-text-light)', lineHeight: 'var(--lh-relaxed)', maxWidth: '800px', marginBottom: 'var(--sp-2xl)' }}>
               {cvData.profile.summary}
             </p>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--sp-lg)', marginTop: 'var(--sp-2xl)' }}>
               {[
                 { number: '25+', label: 'Years of Experience' },
                 { number: '50+', label: 'Projects Executed' },
@@ -289,10 +289,19 @@ export default function Home() {
               ].map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-6 border border-primary-200 hover:shadow-lg transition-shadow"
+                  style={{
+                    background: 'var(--color-surface)',
+                    border: '1px solid var(--brand-gold)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'var(--sp-lg)',
+                    transition: 'all var(--transition-base)',
+                    cursor: 'pointer'
+                  }}
+                  onMouseEnter={(e) => e.target.style.boxShadow = '0 8px 24px rgba(212, 175, 55, 0.15)'}
+                  onMouseLeave={(e) => e.target.style.boxShadow = 'none'}
                 >
-                  <div className="text-4xl font-bold text-primary-600 mb-2">{stat.number}</div>
-                  <p className="text-sm text-gray-700 font-medium">{stat.label}</p>
+                  <div style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--brand-gold)', marginBottom: 'var(--sp-sm)' }}>{stat.number}</div>
+                  <p style={{ fontSize: 'var(--font-base)', color: 'var(--color-text-light)', fontWeight: '500', margin: 0 }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -300,86 +309,145 @@ export default function Home() {
         </section>
 
         {/* CTA to Explore */}
-        <section className="py-16 px-4 bg-primary-50">
+        <section className="py-16 px-4" style={{ background: 'var(--color-surface)' }}>
           <div className="max-w-6xl mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-4">Learn More</h3>
-            <p className="text-lg text-gray-700 mb-8">
+            <h3 style={{ fontSize: 'var(--font-2xl)', fontWeight: 'var(--font-weight-bold)', marginBottom: 'var(--sp-lg)', color: 'var(--brand-gold)' }}>Learn More</h3>
+            <p style={{ fontSize: 'var(--font-lg)', color: 'var(--color-text-light)', marginBottom: 'var(--sp-2xl)' }}>
               Explore complete professional history, education, certifications, and executed projects.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-all transform hover:scale-105"
-              >
-                View Full CV
-                <FiArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="/projects"
-                className="inline-flex items-center justify-center gap-2 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-3 px-8 rounded-lg transition-all transform hover:scale-105"
-              >
-                Explore Projects
-                <FiArrowRight className="w-5 h-5" />
-              </a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-md)', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <style>{`
+                @media (min-width: 640px) {
+                  .cta-button-group {
+                    flex-direction: row;
+                  }
+                }
+              `}</style>
+              <div className="cta-button-group" style={{ display: 'flex', justifyContent: 'center', gap: 'var(--sp-md)' }}>
+                <a
+                  href="/about"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    background: 'var(--brand-gold)',
+                    color: 'var(--brand-black)',
+                    fontWeight: 'var(--font-weight-semibold)',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: 'var(--radius-md)',
+                    transition: 'all var(--transition-base)',
+                    textDecoration: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = '#e8c547';
+                    e.target.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'var(--brand-gold)';
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                >
+                  View Full CV
+                  <FiArrowRight className="w-5 h-5" />
+                </a>
+                <a
+                  href="/projects"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    border: '2px solid var(--brand-gold)',
+                    color: 'var(--brand-gold)',
+                    fontWeight: 'var(--font-weight-semibold)',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: 'var(--radius-md)',
+                    background: 'transparent',
+                    transition: 'all var(--transition-base)',
+                    textDecoration: 'none',
+                    cursor: 'pointer'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = 'rgba(212, 175, 55, 0.1)';
+                    e.target.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'transparent';
+                    e.target.style.transform = 'scale(1)';
+                  }}
+                >
+                  Explore Projects
+                  <FiArrowRight className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 px-4 bg-white">
+        <section id="contact" className="py-20 px-4" style={{ background: 'var(--brand-black)' }}>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-4">Get in Touch</h2>
-            <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+            <h2 style={{ fontSize: 'var(--font-3xl)', fontWeight: 'var(--font-weight-bold)', textAlign: 'center', marginBottom: 'var(--sp-md)', color: 'var(--brand-gold)' }}>Get in Touch</h2>
+            <p style={{ textAlign: 'center', color: 'var(--color-text-light)', marginBottom: 'var(--sp-2xl)', maxWidth: '600px', margin: '0 auto var(--sp-2xl)', fontSize: 'var(--font-lg)' }}>
               Have a question, proposal, or opportunity? I'd love to hear from you. 
               Feel free to reach out and I'll get back to you as soon as possible.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-16">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--sp-2xl)' }}>
               {/* Contact Form */}
               <div>
-                <h3 className="text-2xl font-semibold mb-8">Send a Message</h3>
+                <h3 style={{ fontSize: 'var(--font-xl)', fontWeight: 'var(--font-weight-semibold)', marginBottom: 'var(--sp-lg)', color: 'var(--brand-gold)' }}>Send a Message</h3>
                 <ContactForm />
               </div>
 
               {/* Contact Methods */}
               <div>
-                <h3 className="text-2xl font-semibold mb-8">Contact Information</h3>
+                <h3 style={{ fontSize: 'var(--font-xl)', fontWeight: 'var(--font-weight-semibold)', marginBottom: 'var(--sp-lg)', color: 'var(--brand-gold)' }}>Contact Information</h3>
 
-                <div className="space-y-6">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-lg)' }}>
                   {/* Email */}
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <div className="bg-blue-600 p-2 rounded-lg">
-                        <FiMail className="w-5 h-5 text-white" />
+                  <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: 'var(--sp-lg)', border: '1px solid var(--brand-gold)' }}>
+                    <h4 style={{ fontWeight: 'var(--font-weight-semibold)', color: 'var(--brand-gold)', marginBottom: 'var(--sp-md)', display: 'flex', alignItems: 'center', gap: '0.75rem', margin: 0 }}>
+                      <div style={{ background: 'var(--brand-gold)', padding: '0.5rem', borderRadius: 'var(--radius-md)' }}>
+                        <FiMail className="w-5 h-5" style={{ color: 'var(--brand-black)' }} />
                       </div>
                       Email
                     </h4>
                     <a
                       href="mailto:ayindesemiu@yahoo.com"
-                      className="text-blue-600 hover:text-blue-700 transition-colors break-all font-medium"
+                      style={{ color: 'var(--color-text-light)', textDecoration: 'none', fontWeight: '500', transition: 'color var(--transition-base)' }}
+                      onMouseEnter={(e) => e.target.style.color = 'var(--brand-gold)'}
+                      onMouseLeave={(e) => e.target.style.color = 'var(--color-text-light)'}
                     >
                       ayindesemiu@yahoo.com
                     </a>
                   </div>
 
                   {/* Phone */}
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <div className="bg-green-600 p-2 rounded-lg">
-                        <FiPhone className="w-5 h-5 text-white" />
+                  <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: 'var(--sp-lg)', border: '1px solid var(--brand-gold)' }}>
+                    <h4 style={{ fontWeight: 'var(--font-weight-semibold)', color: 'var(--brand-gold)', marginBottom: 'var(--sp-md)', display: 'flex', alignItems: 'center', gap: '0.75rem', margin: 0 }}>
+                      <div style={{ background: 'var(--brand-gold)', padding: '0.5rem', borderRadius: 'var(--radius-md)' }}>
+                        <FiPhone className="w-5 h-5" style={{ color: 'var(--brand-black)' }} />
                       </div>
                       Phone
                     </h4>
-                    <div className="space-y-2">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <a
                         href="tel:+2348034025477"
-                        className="block text-green-600 hover:text-green-700 transition-colors font-medium"
+                        style={{ color: 'var(--color-text-light)', textDecoration: 'none', fontWeight: '500', transition: 'color var(--transition-base)' }}
+                        onMouseEnter={(e) => e.target.style.color = 'var(--brand-gold)'}
+                        onMouseLeave={(e) => e.target.style.color = 'var(--color-text-light)'}
                       >
                         +234 803 402 5477
                       </a>
                       <a
                         href="tel:+2348024280611"
-                        className="block text-green-600 hover:text-green-700 transition-colors font-medium"
+                        style={{ color: 'var(--color-text-light)', textDecoration: 'none', fontWeight: '500', transition: 'color var(--transition-base)' }}
+                        onMouseEnter={(e) => e.target.style.color = 'var(--brand-gold)'}
+                        onMouseLeave={(e) => e.target.style.color = 'var(--color-text-light)'}
                       >
                         +234 802 428 0611
                       </a>
@@ -387,14 +455,14 @@ export default function Home() {
                   </div>
 
                   {/* Address */}
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <div className="bg-purple-600 p-2 rounded-lg">
-                        <FiMapPin className="w-5 h-5 text-white" />
+                  <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', padding: 'var(--sp-lg)', border: '1px solid var(--brand-gold)' }}>
+                    <h4 style={{ fontWeight: 'var(--font-weight-semibold)', color: 'var(--brand-gold)', marginBottom: 'var(--sp-md)', display: 'flex', alignItems: 'center', gap: '0.75rem', margin: 0 }}>
+                      <div style={{ background: 'var(--brand-gold)', padding: '0.5rem', borderRadius: 'var(--radius-md)' }}>
+                        <FiMapPin className="w-5 h-5" style={{ color: 'var(--brand-black)' }} />
                       </div>
                       Address
                     </h4>
-                    <p className="text-gray-700 mb-4 leading-relaxed">
+                    <p style={{ color: 'var(--color-text-light)', marginBottom: 'var(--sp-md)', lineHeight: 'var(--lh-relaxed)', margin: 0 }}>
                       Hse 3, Ajagungbade Street, off Jimoh Balogun Street,<br />
                       off CMD Road, Ikosi Ketu, Lagos, Nigeria
                     </p>
@@ -402,7 +470,9 @@ export default function Home() {
                       href="https://www.google.com/maps/search/Ajagungbade+Street+Ikosi+Ketu+Lagos/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-purple-600 hover:text-purple-700 transition-colors font-medium inline-flex items-center gap-1"
+                      style={{ color: 'var(--brand-gold)', textDecoration: 'none', fontWeight: '500', display: 'inline-flex', alignItems: 'center', gap: '0.25rem', transition: 'color var(--transition-base)' }}
+                      onMouseEnter={(e) => e.target.style.color = '#e8c547'}
+                      onMouseLeave={(e) => e.target.style.color = 'var(--brand-gold)'}
                     >
                       View on Maps
                       <FiArrowRight className="w-4 h-4" />

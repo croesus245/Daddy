@@ -45,21 +45,24 @@ export default function About() {
       <main>
         <style>{`
           .about-page-header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 80%, #000) 100%);
+            background: linear-gradient(135deg, var(--brand-black) 0%, rgba(0, 0, 0, 0.95) 100%);
             color: white;
             padding: var(--sp-lg) var(--sp-md);
             margin-bottom: var(--sp-2xl);
+            border-bottom: 3px solid var(--brand-gold);
           }
 
           .about-page-header h1 {
             font-size: var(--font-4xl);
             font-weight: 700;
             margin-bottom: var(--sp-md);
+            color: var(--brand-gold);
           }
 
           .about-page-header p {
             font-size: var(--font-lg);
             opacity: 0.9;
+            color: var(--color-text-light);
           }
 
           .about-section {
@@ -70,12 +73,12 @@ export default function About() {
             font-size: var(--font-2xl);
             font-weight: 700;
             margin-bottom: var(--sp-lg);
-            color: var(--color-primary);
+            color: var(--brand-gold);
           }
 
           .summary-box {
-            background: color-mix(in srgb, var(--color-primary) 5%, white);
-            border: 1px solid color-mix(in srgb, var(--color-primary) 15%, white);
+            background: var(--color-surface);
+            border: 1px solid var(--brand-gold);
             border-radius: var(--radius-lg);
             padding: var(--sp-lg);
           }
@@ -89,7 +92,7 @@ export default function About() {
           .cert-year-label {
             font-size: var(--font-sm);
             font-weight: 600;
-            color: var(--color-accent);
+            color: var(--brand-gold);
             margin-bottom: var(--sp-md);
           }
 
@@ -103,14 +106,14 @@ export default function About() {
           .cert-item {
             display: flex;
             gap: var(--sp-md);
-            background: color-mix(in srgb, #f9f9f9 100%, transparent);
+            background: var(--color-surface);
             padding: var(--sp-md);
             border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
+            border: 1px solid var(--brand-gold);
           }
 
           .cert-item-check {
-            color: var(--color-accent);
+            color: var(--brand-gold);
             font-weight: 700;
             flex-shrink: 0;
             margin-top: 2px;
@@ -126,7 +129,7 @@ export default function About() {
           .award-card,
           .publication-card,
           .conference-card {
-            background: white;
+            background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: var(--radius-lg);
             padding: var(--sp-lg);
@@ -138,13 +141,14 @@ export default function About() {
           .award-card:hover,
           .publication-card:hover,
           .conference-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+            border-color: var(--brand-gold);
           }
 
           .member-status-badge {
             font-size: var(--font-xs);
-            background: color-mix(in srgb, var(--color-accent) 10%, white);
-            color: var(--color-accent);
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--brand-gold);
             padding: var(--sp-xs) var(--sp-sm);
             border-radius: 99px;
             white-space: nowrap;
@@ -154,30 +158,30 @@ export default function About() {
           .appointment-title {
             font-size: var(--font-lg);
             font-weight: 600;
-            color: var(--color-primary);
+            color: var(--brand-gold);
             margin-bottom: var(--sp-sm);
           }
 
           .appointment-org {
             font-size: var(--font-base);
             font-weight: 500;
-            color: var(--color-accent);
+            color: var(--color-text-light);
             margin-bottom: var(--sp-sm);
           }
 
           .award-year {
             font-size: var(--font-sm);
             font-weight: 600;
-            color: #d97706;
+            color: var(--brand-gold);
           }
 
           .award-card {
-            background: linear-gradient(135deg, rgba(253, 243, 208, 0.3) 0%, rgba(254, 240, 138, 0.2) 100%);
-            border-color: #fcd34d;
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--brand-gold);
           }
 
           .publication-bullet {
-            color: var(--color-accent);
+            color: var(--brand-gold);
             font-weight: 700;
             font-size: var(--font-lg);
             margin-top: 4px;
@@ -186,8 +190,8 @@ export default function About() {
 
           .hobby-tag {
             display: inline-block;
-            background: color-mix(in srgb, var(--color-accent) 10%, white);
-            color: var(--color-accent);
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--brand-gold);
             padding: var(--sp-sm) var(--sp-md);
             border-radius: 99px;
             font-weight: 500;
@@ -207,7 +211,7 @@ export default function About() {
           .stat-number {
             font-size: var(--font-3xl);
             font-weight: 700;
-            color: var(--color-accent);
+            color: var(--brand-gold);
             margin-bottom: var(--sp-sm);
           }
 

@@ -52,21 +52,24 @@ export default function Projects() {
       <main>
         <style>{`
           .projects-page-header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 80%, #000) 100%);
+            background: linear-gradient(135deg, var(--brand-black) 0%, rgba(0, 0, 0, 0.95) 100%);
             color: white;
             padding: var(--sp-lg) var(--sp-md);
             margin-bottom: var(--sp-2xl);
+            border-bottom: 3px solid var(--brand-gold);
           }
 
           .projects-page-header h1 {
             font-size: var(--font-4xl);
             font-weight: 700;
             margin-bottom: var(--sp-md);
+            color: var(--brand-gold);
           }
 
           .projects-page-header p {
             font-size: var(--font-lg);
             opacity: 0.9;
+            color: var(--color-text-light);
           }
 
           .projects-section {
@@ -81,7 +84,7 @@ export default function Projects() {
             font-size: var(--font-2xl);
             font-weight: 700;
             margin-bottom: var(--sp-md);
-            color: var(--color-primary);
+            color: var(--brand-gold);
           }
 
           .projects-section-desc {
@@ -96,8 +99,8 @@ export default function Projects() {
           }
 
           .stats-box {
-            background: color-mix(in srgb, var(--color-primary) 5%, white);
-            border: 1px solid color-mix(in srgb, var(--color-primary) 15%, white);
+            background: var(--color-surface);
+            border: 1px solid var(--brand-gold);
             border-radius: var(--radius-lg);
             padding: var(--sp-lg);
             margin-top: var(--sp-2xl);
@@ -116,7 +119,7 @@ export default function Projects() {
           .stat-number {
             font-size: var(--font-2xl);
             font-weight: 700;
-            color: var(--color-accent);
+            color: var(--brand-gold);
             margin-bottom: var(--sp-xs);
           }
 
@@ -128,8 +131,8 @@ export default function Projects() {
           .cta-section {
             text-align: center;
             padding: var(--sp-lg);
-            background: white;
-            border: 1px solid var(--color-border);
+            background: var(--color-surface);
+            border: 1px solid var(--brand-gold);
             border-radius: var(--radius-lg);
             margin-top: var(--sp-2xl);
           }
@@ -138,7 +141,7 @@ export default function Projects() {
             font-size: var(--font-xl);
             font-weight: 700;
             margin-bottom: var(--sp-md);
-            color: var(--color-primary);
+            color: var(--brand-gold);
           }
 
           .cta-section p {

@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{ background: 'var(--color-primary)', color: 'white', marginTop: 'var(--sp-2xl)', padding: 'var(--sp-2xl) var(--sp-md)' }}>
+    <footer style={{ background: 'var(--brand-black)', color: 'white', marginTop: 'var(--sp-2xl)', padding: 'var(--sp-2xl) var(--sp-md)', borderTop: '2px solid var(--brand-gold)' }}>
       <style>{`
         .footer-container {
           max-width: 1200px;
@@ -16,23 +16,24 @@ export default function Footer() {
         .footer-brand {
           display: flex;
           align-items: center;
-          gap: var(--sp-sm);
+          gap: var(--gap-md);
           margin-bottom: var(--sp-lg);
-          padding-bottom: var(--sp-md);
-          border-bottom: 1px solid rgba(255,255,255,0.1);
+          padding-bottom: var(--sp-lg);
+          border-bottom: 2px solid var(--brand-gold);
         }
         
         .footer-brand img {
-          width: 40px;
-          height: 40px;
+          width: 44px;
+          height: 44px;
           border-radius: 6px;
+          background: var(--color-border);
         }
         
         .footer-brand h2 {
           font-size: var(--font-lg);
-          font-weight: var(--font-weight-bold);
+          font-weight: 700;
           margin: 0;
-          color: white;
+          color: var(--brand-gold);
         }
         
         .footer-grid {
@@ -44,9 +45,12 @@ export default function Footer() {
         
         .footer-col h3 {
           font-size: var(--font-base);
-          font-weight: var(--font-weight-semibold);
-          margin: 0 0 var(--sp-md) 0;
-          color: white;
+          font-weight: 600;
+          margin: 0 0 var(--gap-md) 0;
+          color: var(--brand-gold);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
         }
         
         .footer-col ul {
@@ -55,21 +59,23 @@ export default function Footer() {
           padding: 0;
           display: flex;
           flex-direction: column;
-          gap: var(--sp-sm);
+          gap: var(--gap-md);
         }
         
         .footer-col a, .footer-col p {
-          color: rgba(255,255,255,0.75);
+          color: var(--color-text-light);
           font-size: var(--font-base);
-          transition: color var(--transition-base);
+          transition: all var(--transition-base);
           text-decoration: none;
           display: flex;
           align-items: flex-start;
-          gap: 0.5rem;
+          gap: 0.75rem;
+          line-height: 1.5;
         }
         
         .footer-col a:hover {
-          color: white;
+          color: var(--brand-gold);
+          padding-left: 4px;
         }
         
         .footer-col p {
@@ -79,24 +85,24 @@ export default function Footer() {
         
         .footer-divider {
           border: none;
-          border-top: 1px solid rgba(255,255,255,0.1);
+          border-top: 1px solid var(--color-border);
           margin: var(--sp-2xl) 0;
         }
         
         .footer-copyright {
           text-align: center;
           font-size: var(--font-sm);
-          color: rgba(255,255,255,0.6);
+          color: var(--color-text-muted);
         }
         
         .footer-copyright a {
-          color: rgba(255,255,255,0.8);
+          color: var(--brand-gold);
           text-decoration: none;
           transition: color var(--transition-base);
         }
         
         .footer-copyright a:hover {
-          color: white;
+          color: #e8c547;
         }
       `}</style>
       

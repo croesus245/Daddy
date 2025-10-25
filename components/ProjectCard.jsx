@@ -3,7 +3,7 @@ export default function ProjectCard({ project }) {
     <>
       <style>{`
         .project-card {
-          background: white;
+          background: var(--color-surface);
           border: 1px solid var(--color-border);
           border-radius: var(--radius-lg);
           padding: var(--sp-lg);
@@ -14,8 +14,9 @@ export default function ProjectCard({ project }) {
         }
 
         .project-card:hover {
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          border-color: var(--color-accent);
+          box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+          border-color: var(--brand-gold);
+          transform: translateY(-4px);
         }
 
         .project-card-content {
@@ -25,7 +26,7 @@ export default function ProjectCard({ project }) {
         .project-card-title {
           font-size: var(--font-lg);
           font-weight: 600;
-          color: var(--color-primary);
+          color: var(--brand-gold);
           margin-bottom: var(--sp-md);
         }
 
@@ -44,7 +45,7 @@ export default function ProjectCard({ project }) {
 
         .project-card-role {
           font-size: var(--font-sm);
-          color: var(--color-accent);
+          color: var(--brand-gold);
           font-weight: 600;
           margin-bottom: var(--sp-md);
         }
@@ -58,7 +59,7 @@ export default function ProjectCard({ project }) {
 
         .project-card-specs {
           padding-top: var(--sp-md);
-          border-top: 1px solid var(--color-border);
+          border-top: 1px solid var(--brand-gold);
           margin-top: auto;
         }
 
@@ -68,7 +69,7 @@ export default function ProjectCard({ project }) {
         }
 
         .project-card-specs-label strong {
-          color: var(--color-primary);
+          color: var(--brand-gold);
           font-weight: 600;
         }
       `}</style>
