@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 
@@ -14,14 +15,26 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <nav className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center gap-4">
+        {/* Logo and Brand */}
         <Link
           href="/"
-          className="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
+          className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity flex-shrink-0"
           aria-label="Home"
         >
-          <span className="hidden sm:inline">Dr. Semiu Akanni</span>
-          <span className="sm:hidden">SA</span>
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+            <Image
+              src="/logo.png"
+              alt="Dr. Semiu Akanni"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="hidden sm:inline text-lg sm:text-xl font-bold text-primary-600">
+            Dr. Semiu Akanni
+          </span>
+          <span className="sm:hidden text-sm font-bold text-primary-600">SA</span>
         </Link>
 
         {/* Desktop Navigation */}

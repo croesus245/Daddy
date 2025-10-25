@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 export default function Footer() {
@@ -7,6 +8,19 @@ export default function Footer() {
   return (
     <footer className="bg-primary-900 text-white py-12 mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Logo and Brand */}
+        <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-700">
+          <div className="relative w-10 h-10">
+            <Image
+              src="/logo.png"
+              alt="Dr. Semiu Akanni"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <h2 className="text-xl font-bold">Dr. Semiu Akanni</h2>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Contact Section */}
           <div>
