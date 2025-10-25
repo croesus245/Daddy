@@ -1,120 +1,179 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-900 text-white py-12 mt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo and Brand */}
-        <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-700">
-          <div className="relative w-10 h-10">
-            <Image
-              src="/logo.png"
-              alt="Dr. Semiu Akanni"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <h2 className="text-xl font-bold">Dr. Semiu Akanni</h2>
+    <footer style={{ background: 'var(--color-primary)', color: 'white', marginTop: 'var(--sp-2xl)', padding: 'var(--sp-2xl) var(--sp-md)' }}>
+      <style>{`
+        .footer-container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        
+        .footer-brand {
+          display: flex;
+          align-items: center;
+          gap: var(--sp-sm);
+          margin-bottom: var(--sp-lg);
+          padding-bottom: var(--sp-md);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-brand img {
+          width: 40px;
+          height: 40px;
+          border-radius: 6px;
+        }
+        
+        .footer-brand h2 {
+          font-size: var(--font-lg);
+          font-weight: var(--font-weight-bold);
+          margin: 0;
+          color: white;
+        }
+        
+        .footer-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: var(--sp-2xl);
+          margin-bottom: var(--sp-2xl);
+        }
+        
+        .footer-col h3 {
+          font-size: var(--font-base);
+          font-weight: var(--font-weight-semibold);
+          margin: 0 0 var(--sp-md) 0;
+          color: white;
+        }
+        
+        .footer-col ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: var(--sp-sm);
+        }
+        
+        .footer-col a, .footer-col p {
+          color: rgba(255,255,255,0.75);
+          font-size: var(--font-base);
+          transition: color var(--transition-base);
+          text-decoration: none;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+        
+        .footer-col a:hover {
+          color: white;
+        }
+        
+        .footer-col p {
+          display: block;
+          margin: 0;
+        }
+        
+        .footer-divider {
+          border: none;
+          border-top: 1px solid rgba(255,255,255,0.1);
+          margin: var(--sp-2xl) 0;
+        }
+        
+        .footer-copyright {
+          text-align: center;
+          font-size: var(--font-sm);
+          color: rgba(255,255,255,0.6);
+        }
+        
+        .footer-copyright a {
+          color: rgba(255,255,255,0.8);
+          text-decoration: none;
+          transition: color var(--transition-base);
+        }
+        
+        .footer-copyright a:hover {
+          color: white;
+        }
+      `}</style>
+      
+      <div className="footer-container">
+        {/* Brand */}
+        <div className="footer-brand">
+          <Image
+            src="/logo.png"
+            alt="Dr. Semiu Akanni"
+            width={40}
+            height={40}
+            priority
+          />
+          <h2>Dr. Semiu Akanni</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Contact Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li className="flex items-center gap-2">
-                <FiMail className="w-4 h-4" />
-                <a
-                  href="mailto:ayindesemiu@yahoo.com"
-                  className="hover:text-white transition-colors"
-                >
-                  ayindesemiu@yahoo.com
+        {/* Grid */}
+        <div className="footer-grid">
+          {/* Contact */}
+          <div className="footer-col">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a href="mailto:ayindesemiu@yahoo.com">
+                  <FiMail size={16} />
+                  <span>ayindesemiu@yahoo.com</span>
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <FiPhone className="w-4 h-4" />
-                <a href="tel:+2348034025477" className="hover:text-white transition-colors">
-                  +234 803 402 5477
+              <li>
+                <a href="tel:+2348034025477">
+                  <FiPhone size={16} />
+                  <span>+234 803 402 5477</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <FiMapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>Hse 3, Ajagungbade Street, Ikosi Ketu, Lagos, Nigeria</span>
+              <li>
+                <p>
+                  <FiMapPin size={16} />
+                  <span>Hse 3, Ajagungbade Street, Ikosi Ketu, Lagos, Nigeria</span>
+                </p>
               </li>
             </ul>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+          <div className="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About & CV</Link></li>
+              <li><Link href="/projects">Projects</Link></li>
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About & CV
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
+                <a href="#contact" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   Contact
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Professional Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Professional</h3>
-            <p className="text-sm text-gray-300 mb-4">
-              Director, Internal Boundary Department at Office of The Surveyor General of the
-              Federation (OSGOF)
+          {/* Professional */}
+          <div className="footer-col">
+            <h3>Professional</h3>
+            <p style={{ display: 'block' }}>
+              Director, Internal Boundary Department at Office of The Surveyor General of the Federation (OSGOF)
             </p>
-            <div className="flex gap-4">
-              <a
-                href="mailto:ayindesemiu@yahoo.com"
-                className="text-gray-300 hover:text-white transition-colors"
-                aria-label="Email"
-              >
-                <FiMail className="w-5 h-5" />
-              </a>
-              <a
-                href="tel:+2348034025477"
-                className="text-gray-300 hover:text-white transition-colors"
-                aria-label="Phone"
-              >
-                <FiPhone className="w-5 h-5" />
-              </a>
-            </div>
           </div>
         </div>
 
-        <hr className="border-gray-700 my-8" />
+        <hr className="footer-divider" />
 
         {/* Copyright */}
-        <div className="text-center text-sm text-gray-400">
+        <div className="footer-copyright">
           <p>
             &copy; {currentYear} Dr. Semiu Akanni, AYINDE. All rights reserved. | Built with{' '}
-            <a href="https://nextjs.org" className="hover:text-white transition-colors">
+            <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">
               Next.js
             </a>
           </p>

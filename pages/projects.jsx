@@ -50,28 +50,163 @@ export default function Projects() {
       <Header />
 
       <main>
+        <style>{`
+          .projects-page-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 80%, #000) 100%);
+            color: white;
+            padding: var(--sp-lg) var(--sp-md);
+            margin-bottom: var(--sp-2xl);
+          }
+
+          .projects-page-header h1 {
+            font-size: var(--font-4xl);
+            font-weight: 700;
+            margin-bottom: var(--sp-md);
+          }
+
+          .projects-page-header p {
+            font-size: var(--font-lg);
+            opacity: 0.9;
+          }
+
+          .projects-section {
+            margin-bottom: var(--sp-2xl);
+          }
+
+          .projects-section-header {
+            margin-bottom: var(--sp-lg);
+          }
+
+          .projects-section h2 {
+            font-size: var(--font-2xl);
+            font-weight: 700;
+            margin-bottom: var(--sp-md);
+            color: var(--color-primary);
+          }
+
+          .projects-section-desc {
+            font-size: var(--font-base);
+            color: var(--color-text-light);
+          }
+
+          .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--sp-lg);
+          }
+
+          .stats-box {
+            background: color-mix(in srgb, var(--color-primary) 5%, white);
+            border: 1px solid color-mix(in srgb, var(--color-primary) 15%, white);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-lg);
+            margin-top: var(--sp-2xl);
+          }
+
+          .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--sp-lg);
+          }
+
+          .stat-item {
+            text-align: center;
+          }
+
+          .stat-number {
+            font-size: var(--font-2xl);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: var(--sp-xs);
+          }
+
+          .stat-label {
+            font-size: var(--font-sm);
+            color: var(--color-text);
+          }
+
+          .cta-section {
+            text-align: center;
+            padding: var(--sp-lg);
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            margin-top: var(--sp-2xl);
+          }
+
+          .cta-section h3 {
+            font-size: var(--font-xl);
+            font-weight: 700;
+            margin-bottom: var(--sp-md);
+            color: var(--color-primary);
+          }
+
+          .cta-section p {
+            font-size: var(--font-base);
+            color: var(--color-text);
+            margin-bottom: var(--sp-lg);
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            font-weight: 600;
+            padding: var(--sp-md) var(--sp-lg);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+          }
+
+          .cta-button:hover {
+            background: color-mix(in srgb, var(--color-accent) 90%, #000);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+          }
+
+          @media (max-width: 768px) {
+            .projects-page-header h1 {
+              font-size: var(--font-2xl);
+            }
+
+            .projects-page-header p {
+              font-size: var(--font-base);
+            }
+
+            .projects-section h2 {
+              font-size: var(--font-xl);
+            }
+
+            .projects-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+        `}</style>
+
         {/* Page Header */}
-        <section className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-12 md:py-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Projects & Executed Works</h1>
-            <p className="text-lg text-primary-100">
-              50+ successfully executed projects across government, surveying, and infrastructure sectors
-            </p>
+        <section className="projects-page-header">
+          <div className="container">
+            <h1>Projects & Executed Works</h1>
+            <p>50+ successfully executed projects across government, surveying, and infrastructure sectors</p>
           </div>
         </section>
 
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
+        <div className="container" style={{ paddingTop: 'var(--sp-2xl)', paddingBottom: 'var(--sp-2xl)' }}>
           {/* Government & Coordination Projects */}
           {governmentProjects.length > 0 && (
-            <section className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold mb-2">Government & Coordination Projects</h2>
-                <p className="text-gray-600">
-                  Strategic initiatives in survey coordination, regulatory compliance, and inter-agency
-                  collaboration
+            <section className="projects-section">
+              <div className="projects-section-header">
+                <h2>Government & Coordination Projects</h2>
+                <p className="projects-section-desc">
+                  Strategic initiatives in survey coordination, regulatory compliance, and inter-agency collaboration
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="projects-grid">
                 {governmentProjects.map((project, idx) => (
                   <ProjectCard key={idx} project={project} />
                 ))}
@@ -81,14 +216,14 @@ export default function Projects() {
 
           {/* Survey & Mapping Projects */}
           {surveyProjects.length > 0 && (
-            <section className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold mb-2">Survey & Mapping Projects</h2>
-                <p className="text-gray-600">
+            <section className="projects-section">
+              <div className="projects-section-header">
+                <h2>Survey & Mapping Projects</h2>
+                <p className="projects-section-desc">
                   Topographical, cadastral, hydrographic, and layout surveys across multiple sites
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="projects-grid">
                 {surveyProjects.map((project, idx) => (
                   <ProjectCard
                     key={idx}
@@ -114,14 +249,14 @@ export default function Projects() {
 
           {/* Piling & Foundation Projects */}
           {pilingProjects.length > 0 && (
-            <section className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold mb-2">Piling & Foundation Projects</h2>
-                <p className="text-gray-600">
+            <section className="projects-section">
+              <div className="projects-section-header">
+                <h2>Piling & Foundation Projects</h2>
+                <p className="projects-section-desc">
                   CFA piling supervision and site management for major construction projects
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="projects-grid">
                 {pilingProjects.map((project, idx) => {
                   // Extract piling specs from title
                   const specMatch = project.title.match(/(\d+)mm.*?(\d+)m\s*&\s*(\d+)/);
@@ -145,14 +280,14 @@ export default function Projects() {
 
           {/* Other Projects */}
           {infrastructureProjects.length > 0 && (
-            <section className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold mb-2">Infrastructure & Consulting Projects</h2>
-                <p className="text-gray-600">
+            <section className="projects-section">
+              <div className="projects-section-header">
+                <h2>Infrastructure & Consulting Projects</h2>
+                <p className="projects-section-desc">
                   Consulting, management, and specialized projects
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="projects-grid">
                 {infrastructureProjects.map((project, idx) => (
                   <ProjectCard key={idx} project={project} />
                 ))}
@@ -161,41 +296,41 @@ export default function Projects() {
           )}
 
           {/* Project Statistics */}
-          <section className="bg-primary-50 rounded-lg p-8 border border-primary-200 mt-16">
-            <h3 className="text-2xl font-bold mb-6">Project Portfolio Summary</h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">{cvData.projects.length}+</div>
-                <p className="text-gray-700">Total Projects</p>
+          <section className="stats-box">
+            <h3 style={{ fontSize: 'var(--font-xl)', fontWeight: '700', marginBottom: 'var(--sp-lg)', color: 'var(--color-primary)' }}>
+              Project Portfolio Summary
+            </h3>
+            <div className="stats-grid">
+              <div className="stat-item">
+                <div className="stat-number">{cvData.projects.length}+</div>
+                <div className="stat-label">Total Projects</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">25+</div>
-                <p className="text-gray-700">Years of Experience</p>
+              <div className="stat-item">
+                <div className="stat-number">25+</div>
+                <div className="stat-label">Years of Experience</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">10+</div>
-                <p className="text-gray-700">States Covered</p>
+              <div className="stat-item">
+                <div className="stat-number">10+</div>
+                <div className="stat-label">States Covered</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">100%</div>
-                <p className="text-gray-700">Success Rate</p>
+              <div className="stat-item">
+                <div className="stat-number">100%</div>
+                <div className="stat-label">Success Rate</div>
               </div>
             </div>
           </section>
 
           {/* Call to Action */}
-          <section className="text-center mt-16 p-8 bg-white border border-gray-200 rounded-lg">
-            <h3 className="text-2xl font-bold mb-4">Interested in Collaboration?</h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              For more details about specific projects or to discuss new opportunities, please reach out.
-            </p>
+          <section className="cta-section">
+            <h3>Interested in Collaboration?</h3>
+            <p>For more details about specific projects or to discuss new opportunities, please reach out.</p>
             <a
               href="/#contact"
               onClick={(e) => {
                 e.preventDefault();
                 window.location.href = '/#contact';
               }}
-              className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+              className="cta-button"
             >
               Get in Touch
             </a>
