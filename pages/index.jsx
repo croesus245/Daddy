@@ -57,123 +57,217 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-12 md:py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            {/* Main Grid - Profile + Info */}
-            <div className="grid md:grid-cols-3 gap-8 items-center mb-20">
-              {/* Left - Main Image */}
-              <div className="md:col-span-1">
-                <div className="relative h-96 md:h-full rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/IMG-20251023-WA0082.jpg"
-                    alt="Dr. Semiu Akanni, AYINDE - Professional Portrait"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              </div>
-
-              {/* Center - Profile Info */}
-              <div className="md:col-span-1 space-y-6">
-                <div>
-                  <p className="text-primary-600 font-semibold uppercase tracking-wider text-sm mb-2">
-                    Welcome
-                  </p>
-                  <h1 className="text-5xl md:text-5xl font-bold text-gray-900 mb-3">
-                    Dr. Semiu<br />
-                    <span className="text-primary-600">Akanni AYINDE</span>
-                  </h1>
-                  <p className="text-xl md:text-2xl font-semibold text-gray-700 mb-2">
-                    Director, Internal Boundary Department
-                  </p>
-                  <p className="text-base text-primary-600 font-semibold">
-                    Office of The Surveyor General of the Federation
-                  </p>
-                </div>
-
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Accomplished surveyor with 25+ years of expertise in surveying, geo-informatics, and land administration. 
-                  Fellow of Nigeria Institution of Surveyors with proven leadership in survey coordination and geospatial technology implementation.
-                </p>
-
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg transition-all transform hover:scale-105 w-full md:w-auto group"
-                >
-                  Get in Touch
-                  <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-
-              {/* Right - Side Images */}
-              <div className="md:col-span-1 space-y-4">
-                <div className="relative h-44 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <Image
-                    src="/IMG-20251023-WA0070.jpg"
-                    alt="Dr. Semiu Akanni - Professional"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="relative h-44 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <Image
-                    src="/IMG-20251023-WA0075.jpg"
-                    alt="Dr. Semiu Akanni - Event"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+        <section className="hero container">
+          <style>{`
+            .hero-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: var(--sp-2xl);
+              align-items: start;
+              margin-bottom: var(--sp-2xl);
+            }
+            
+            @media (min-width: 1024px) {
+              .hero-grid {
+                grid-template-columns: 1fr 1fr;
+              }
+            }
+            
+            .hero-media {
+              border-radius: var(--radius-lg);
+              overflow: hidden;
+              box-shadow: var(--shadow-lg);
+            }
+            
+            .hero-media img {
+              width: 100%;
+              height: auto;
+              display: block;
+            }
+            
+            .hero-content h1 {
+              margin-bottom: var(--sp-sm);
+              line-height: 1.05;
+            }
+            
+            .hero-title {
+              font-size: var(--font-3xl);
+              font-weight: var(--font-weight-bold);
+              color: var(--color-text);
+              margin: 0 0 var(--sp-xs) 0;
+              line-height: 1.1;
+            }
+            
+            .hero-role {
+              font-size: var(--font-xl);
+              font-weight: var(--font-weight-semibold);
+              color: var(--color-accent);
+              margin: 0 0 var(--sp-xs) 0;
+            }
+            
+            .hero-org {
+              font-size: var(--font-base);
+              color: var(--color-text-light);
+              margin-bottom: var(--sp-lg);
+            }
+            
+            .hero-desc {
+              font-size: var(--font-lg);
+              color: var(--color-text-light);
+              line-height: var(--lh-relaxed);
+              margin-bottom: var(--sp-lg);
+            }
+            
+            .hero-cta {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+              background: var(--color-accent);
+              color: white;
+              padding: 1rem 1.5rem;
+              border-radius: var(--radius-md);
+              font-weight: var(--font-weight-semibold);
+              transition: all var(--transition-base);
+              text-decoration: none;
+              border: none;
+              cursor: pointer;
+            }
+            
+            .hero-cta:hover {
+              background: #0052a3;
+              transform: translateY(-2px);
+              box-shadow: var(--shadow-md);
+            }
+            
+            .contact-cards {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: var(--sp-lg);
+              background: var(--color-bg-light);
+              border: 1px solid var(--color-border);
+              border-radius: var(--radius-lg);
+              padding: var(--sp-2xl) var(--sp-lg);
+              margin-top: var(--sp-2xl);
+            }
+            
+            .contact-card {
+              display: flex;
+              gap: var(--sp-md);
+              align-items: flex-start;
+            }
+            
+            .contact-icon {
+              flex-shrink: 0;
+              width: 48px;
+              height: 48px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: var(--color-accent);
+              color: white;
+              border-radius: var(--radius-md);
+            }
+            
+            .contact-info h4 {
+              font-size: var(--font-base);
+              font-weight: var(--font-weight-semibold);
+              color: var(--color-text);
+              margin: 0 0 0.25rem 0;
+            }
+            
+            .contact-info p,
+            .contact-info a {
+              font-size: var(--font-base);
+              margin: 0;
+            }
+            
+            .contact-info a {
+              color: var(--color-accent);
+              text-decoration: none;
+              transition: color var(--transition-base);
+            }
+            
+            .contact-info a:hover {
+              color: #0052a3;
+              text-decoration: underline;
+            }
+          `}</style>
+          
+          <div className="hero-grid">
+            {/* Left: Main Portrait */}
+            <div>
+              <div className="hero-media">
+                <Image
+                  src="/IMG-20251023-WA0082.jpg"
+                  alt="Dr. Semiu Akanni, AYINDE - Professional Portrait"
+                  width={600}
+                  height={700}
+                  priority
+                  style={{ width: '100%', height: 'auto' }}
+                />
               </div>
             </div>
 
-            {/* Contact Info Cards */}
-            <div className="grid md:grid-cols-3 gap-6 bg-gradient-to-br from-primary-50 to-gray-50 rounded-2xl p-8 md:p-10 border border-primary-100/50">
-              {[
-                {
-                  icon: FiMail,
-                  label: 'Email',
-                  value: 'ayindesemiu@yahoo.com',
-                  href: 'mailto:ayindesemiu@yahoo.com',
-                },
-                {
-                  icon: FiPhone,
-                  label: 'Phone',
-                  value: '+234 803 402 5477',
-                  href: 'tel:+2348034025477',
-                },
-                {
-                  icon: FiMapPin,
-                  label: 'Location',
-                  value: 'Ikosi Ketu, Lagos',
-                  href: null,
-                },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-4">
-                  <div className="bg-primary-600 p-4 rounded-lg flex-shrink-0">
-                    <item.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-600 font-semibold">{item.label}</p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="font-semibold text-gray-900 hover:text-primary-600 transition-colors break-all text-sm"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="font-semibold text-gray-900 text-sm">{item.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+            {/* Right: Content */}
+            <div className="hero-content">
+              <h1 className="hero-title">Dr. Semiu Akanni AYINDE</h1>
+              <p className="hero-role">Director, Internal Boundary Department</p>
+              <p className="hero-org">Office of The Surveyor General of the Federation (OSGOF)</p>
+              
+              <p className="hero-desc">
+                Accomplished surveyor with 25+ years of expertise in surveying, geo-informatics, and land administration. 
+                Fellow of Nigeria Institution of Surveyors with proven leadership in geospatial technology implementation and survey coordination.
+              </p>
+
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hero-cta"
+              >
+                Get in Touch <FiArrowRight className="w-4 h-4" />
+              </a>
             </div>
+          </div>
+
+          {/* Contact Info Cards */}
+          <div className="contact-cards">
+            {[
+              {
+                icon: FiMail,
+                label: 'Email',
+                value: 'ayindesemiu@yahoo.com',
+                href: 'mailto:ayindesemiu@yahoo.com',
+              },
+              {
+                icon: FiPhone,
+                label: 'Phone',
+                value: '+234 803 402 5477',
+                href: 'tel:+2348034025477',
+              },
+              {
+                icon: FiMapPin,
+                label: 'Location',
+                value: 'Ikosi Ketu, Lagos, Nigeria',
+                href: null,
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="contact-card">
+                <div className="contact-icon">
+                  <item.icon size={24} />
+                </div>
+                <div className="contact-info">
+                  <h4>{item.label}</h4>
+                  {item.href ? (
+                    <a href={item.href}>{item.value}</a>
+                  ) : (
+                    <p>{item.value}</p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

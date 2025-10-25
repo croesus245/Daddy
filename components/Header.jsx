@@ -4,23 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
-export default function Header() {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close menu when navigating
-  useEffect(() => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
   }, []);
 
   const navLinks = [
@@ -31,98 +22,133 @@ export default function Header() {
   ];
 
   return (
-    <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        backgroundColor: 'var(--color-bg)',
-        borderBottom: `1px solid ${isScrolled ? 'var(--color-border)' : 'transparent'}`,
-        boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
-        transition: 'all var(--transition-base)',
-      }}
-    >
-      <nav
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: 'var(--sp-md)',
-          gap: 'var(--sp-md)',
-        }}
-      >
-        {/* Logo & Brand */}
-        <Link
-          href="/"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--sp-sm)',
-            textDecoration: 'none',
-            color: 'var(--color-text)',
-            fontWeight: 'var(--font-weight-bold)',
-            transition: 'opacity var(--transition-base)',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-        >
-          <div style={{ position: 'relative', width: '40px', height: '40px' }}>
-            <Image
-              src="/logo.png"
-              alt="Dr. Semiu Akanni"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-          <span style={{ fontSize: 'var(--font-lg)', fontWeight: 'var(--font-weight-bold)' }}>
-            Dr. Semiu Akanni
-          </span>
+    <header className="site-header">
+      <style>{`
+        .site-header.is-scrolled {
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          background: rgba(255,255,255,0.95);
+        }
+        
+        .nav-brand {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          text-decoration: none;
+          color: var(--color-text);
+          font-weight: var(--font-weight-bold);
+          font-size: var(--font-lg);
+          transition: opacity var(--transition-base);
+        }
+        
+        .nav-brand:hover {
+          opacity: 0.8;
+        }
+        
+        .nav-brand img {
+          width: 36px;
+          height: 36px;
+          border-radius: 6px;
+        }
+        
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .nav-links a {
+          color: var(--color-text-light);
+          font-weight: var(--font-weight-medium);
+          font-size: var(--font-base);
+          transition: color var(--transition-base);
+          text-decoration: none;
+        }
+        
+        .nav-links a:hover {
+          color: var(--color-accent);
+        }
+        
+        .mobile-nav-toggle {
+          display: none;
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          padding: var(--sp-sm);
+          color: var(--color-text);
+          transition: color var(--transition-base);
+        }
+        
+        .mobile-nav-toggle:hover {
+          color: var(--color-accent);
+        }
+        
+        .mobile-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--color-bg);
+          border-bottom: 1px solid var(--color-border);
+          box-shadow: var(--shadow-md);
+          display: flex;
+          flex-direction: column;
+          padding: var(--sp-md);
+          gap: var(--sp-sm);
+          z-index: 40;
+        }
+        
+        .mobile-menu a {
+          color: var(--color-text-light);
+          padding: var(--sp-sm);
+          border-radius: var(--radius-md);
+          transition: all var(--transition-base);
+          text-decoration: none;
+          display: block;
+        }
+        
+        .mobile-menu a:hover {
+          background: var(--color-bg-light);
+          color: var(--color-accent);
+        }
+        
+        @media (max-width: 768px) {
+          .nav-links {
+            display: none;
+          }
+          
+          .mobile-nav-toggle {
+            display: block;
+          }
+        }
+      `}</style>
+      
+      <nav className="nav-inner">
+        <Link href="/" className="nav-brand">
+          <Image
+            src="/logo.png"
+            alt="Dr. Semiu Akanni"
+            width={36}
+            height={36}
+            priority
+          />
+          <span>Dr. Semiu</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <div
-          style={{
-            display: 'none',
-            gap: 'var(--sp-xl)',
-            '@media (min-width: 768px)': {
-              display: 'flex',
-            },
-          }}
-        >
+        <ul className="nav-links">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                color: 'var(--color-text-light)',
-                fontWeight: 'var(--font-weight-medium)',
-                transition: 'color var(--transition-base)',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-light)')}
-            >
-              {link.label}
-            </Link>
+            <li key={link.href}>
+              <Link href={link.href}>{link.label}</Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        {/* Mobile Menu Button */}
         <button
+          className="mobile-nav-toggle"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          style={{
-            display: 'none',
-            background: 'none',
-            border: 'none',
-            fontSize: '24px',
-            cursor: 'pointer',
-            padding: 'var(--sp-sm)',
-            '@media (max-width: 767px)': {
-              display: 'block',
-            },
-          }}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMenuOpen}
         >
@@ -130,49 +156,21 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            backgroundColor: 'var(--color-bg)',
-            borderBottom: `1px solid var(--color-border)`,
-            boxShadow: 'var(--shadow-md)',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 'var(--sp-md)',
-            gap: 'var(--sp-sm)',
-          }}
-        >
+        <nav className="mobile-menu">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              style={{
-                color: 'var(--color-text-light)',
-                padding: 'var(--sp-sm)',
-                borderRadius: 'var(--radius-md)',
-                transition: 'all var(--transition-base)',
-                textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--color-bg-light)';
-                e.currentTarget.style.color = 'var(--color-accent)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = 'var(--color-text-light)';
-              }}
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-        </div>
+        </nav>
       )}
     </header>
   );
-}
+};
+
+export default Header;
