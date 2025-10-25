@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Timeline from '@/components/Timeline';
 import cvData from '@/data/cv.json';
-import { FiDownload } from 'react-icons/fi';
 
 export default function About() {
   const formatYearRange = (start, end = null) => {
@@ -57,17 +56,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
           {/* Professional Summary */}
           <section className="mb-16">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-3xl font-bold">Professional Summary</h2>
-              <a
-                href="/api/generate-cv"
-                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
-                download="cv-semiu-akanni.pdf"
-              >
-                <FiDownload className="w-4 h-4" />
-                Download PDF
-              </a>
-            </div>
+            <h2 className="text-3xl font-bold mb-6">Professional Summary</h2>
             <div className="bg-primary-50 rounded-lg p-8 border border-primary-200">
               <p className="text-gray-800 text-lg leading-relaxed">{cvData.profile.summary}</p>
             </div>
@@ -216,7 +205,7 @@ export default function About() {
             </div>
           </section>
 
-          {/* Hobbies */}
+          {/* Interests & Hobbies */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Interests & Hobbies</h2>
             <div className="flex flex-wrap gap-3">
@@ -229,23 +218,6 @@ export default function About() {
                 </span>
               ))}
             </div>
-          </section>
-
-          {/* Download Section */}
-          <section className="bg-primary-50 rounded-lg p-8 border border-primary-200 text-center">
-            <h3 className="text-2xl font-bold mb-4">Download Full CV</h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Download a complete PDF version of the curriculum vitae for offline reference or
-              printing.
-            </p>
-            <a
-              href="/api/generate-cv"
-              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
-              download="cv-semiu-akanni.pdf"
-            >
-              <FiDownload className="w-5 h-5" />
-              Download CV (PDF)
-            </a>
           </section>
         </div>
       </main>
