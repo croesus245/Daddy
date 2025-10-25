@@ -62,7 +62,107 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-lg)', maxWidth: '600px' }}>
+      <style>{`
+        .contact-form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        
+        .contact-form-label {
+          font-size: var(--font-sm);
+          font-weight: 600;
+          color: var(--brand-gold);
+        }
+        
+        .contact-form-input,
+        .contact-form-textarea {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border: 1px solid var(--color-border);
+          border-radius: var(--radius-md);
+          background: var(--color-surface);
+          color: var(--color-text);
+          font-size: var(--font-base);
+          transition: all var(--transition-base);
+          font-family: inherit;
+        }
+        
+        .contact-form-input:focus,
+        .contact-form-textarea:focus {
+          outline: none;
+          border-color: var(--brand-gold);
+          box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .contact-form-input:disabled,
+        .contact-form-textarea:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        .contact-form-textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+        
+        .contact-form-status {
+          padding: 1rem;
+          border-radius: var(--radius-md);
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          font-size: var(--font-base);
+        }
+        
+        .contact-form-status.success {
+          background: rgba(34, 197, 94, 0.1);
+          color: #22c55e;
+          border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .contact-form-status.error {
+          background: rgba(239, 68, 68, 0.1);
+          color: #ef4444;
+          border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .contact-form-submit {
+          width: 100%;
+          padding: 0.75rem 1.5rem;
+          background: var(--brand-gold);
+          color: var(--brand-black);
+          border: none;
+          border-radius: var(--radius-md);
+          font-weight: 600;
+          font-size: var(--font-base);
+          cursor: pointer;
+          transition: all var(--transition-base);
+        }
+        
+        .contact-form-submit:hover:not(:disabled) {
+          background: #e8c547;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 16px rgba(212, 175, 55, 0.25);
+        }
+        
+        .contact-form-submit:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        .contact-form-privacy {
+          font-size: var(--font-xs);
+          color: var(--color-text-muted);
+          text-align: center;
+        }
+        
+        .contact-form-required {
+          color: #ef4444;
+        }
+      `}</style>
+
       {/* Honeypot field (hidden) */}
       <input
         type="text"
@@ -78,11 +178,7 @@ export default function ContactForm() {
       {/* Status Message */}
       {status.message && (
         <div
-          className={`p-4 rounded-lg flex items-center gap-3 ${
-            status.type === 'success'
-              ? 'bg-green-50 text-green-800 border border-green-200'
-              : 'bg-red-50 text-red-800 border border-red-200'
-          }`}
+          className={`contact-form-status ${status.type}`}
           role="alert"
         >
           {status.type === 'success' ? (
@@ -90,14 +186,14 @@ export default function ContactForm() {
           ) : (
             <FiAlertCircle className="w-5 h-5 flex-shrink-0" />
           )}
-          <p>{status.message}</p>
+          <p style={{ margin: 0 }}>{status.message}</p>
         </div>
       )}
 
       {/* Name Field */}
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-          Name <span className="text-red-500">*</span>
+      <div className="contact-form-group">
+        <label htmlFor="name" className="contact-form-label">
+          Name <span className="contact-form-required">*</span>
         </label>
         <input
           type="text"
@@ -106,16 +202,16 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+          className="contact-form-input"
           placeholder="Your name"
           disabled={loading}
         />
       </div>
 
       {/* Email Field */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          Email <span className="text-red-500">*</span>
+      <div className="contact-form-group">
+        <label htmlFor="email" className="contact-form-label">
+          Email <span className="contact-form-required">*</span>
         </label>
         <input
           type="email"
@@ -124,16 +220,16 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+          className="contact-form-input"
           placeholder="your.email@example.com"
           disabled={loading}
         />
       </div>
 
       {/* Message Field */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Message <span className="text-red-500">*</span>
+      <div className="contact-form-group">
+        <label htmlFor="message" className="contact-form-label">
+          Message <span className="contact-form-required">*</span>
         </label>
         <textarea
           id="message"
@@ -141,8 +237,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          rows="5"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+          className="contact-form-textarea"
           placeholder="Your message..."
           disabled={loading}
         />
@@ -152,12 +247,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors disabled:cursor-not-allowed"
+        className="contact-form-submit"
       >
         {loading ? 'Sending...' : 'Send Message'}
       </button>
 
-      <p className="text-xs text-gray-500 text-center">
+      <p className="contact-form-privacy">
         I respect your privacy. Your message will only be used to respond to your inquiry.
       </p>
     </form>
