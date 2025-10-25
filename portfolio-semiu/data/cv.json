@@ -1,0 +1,638 @@
+{
+  "profile": {
+    "fullName": "Surv. (Dr.) Semiu Akanni, AYINDE",
+    "title": "Director, Internal Boundary Department",
+    "organization": "Office of The Surveyor General of the Federation (OSGOF)",
+    "email": "ayindesemiu@yahoo.com",
+    "phone": [
+      {
+        "number": "08034025477",
+        "type": "mobile"
+      },
+      {
+        "number": "08024280611",
+        "type": "mobile"
+      }
+    ],
+    "address": {
+      "street": "Hse 3, Ajagungbade Street, off Jimoh Balogun Street",
+      "area": "off CMD Road, Ikosi Ketu",
+      "city": "Lagos",
+      "country": "Nigeria",
+      "full": "Hse 3, Ajagungbade Street, off Jimoh Balogun Street, off CMD Road, Ikosi Ketu, Lagos, Nigeria"
+    },
+    "summary": "Accomplished Surveyor with 25+ years of experience in surveying, geo-informatics, and land administration. Director at OSGOF with extensive expertise in survey coordination, boundary determination, and geospatial technology implementation. Fellow of Nigeria Institution of Surveyors with multiple leadership appointments and professional accolades."
+  },
+  "education": [
+    {
+      "year": "2021",
+      "degree": "M.Sc.",
+      "field": "Project Management (PM)",
+      "institution": "National University of Singapore, LKY School of Public Policy",
+      "location": "Singapore"
+    },
+    {
+      "year": "2021",
+      "degree": "Certificate",
+      "field": "Negotiation Strategies for Success",
+      "institution": "London Graduate School",
+      "location": "W1k 5RG, London, UK"
+    },
+    {
+      "year": "2011",
+      "degree": "M.Sc.",
+      "field": "Surveying & Geo-informatics",
+      "institution": "University of East London",
+      "location": "E16 2RD, London, UK"
+    },
+    {
+      "year": "2008",
+      "degree": "B.Sc. (Hons.)",
+      "field": "Surveying & Geo-informatics",
+      "institution": "University of Lagos",
+      "location": "Akoka, Yaba, Lagos"
+    },
+    {
+      "year": "2002",
+      "degree": "HND",
+      "field": "Land Surveying",
+      "institution": "Yaba College of Technology",
+      "location": "Yaba, Lagos"
+    },
+    {
+      "year": "1997",
+      "degree": "OND",
+      "field": "Land Surveying",
+      "institution": "Yaba College of Technology",
+      "location": "Yaba, Lagos"
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2021",
+      "title": "Certified Management Consultant (CMC)"
+    },
+    {
+      "year": "2021",
+      "title": "Masterclass Certificate in Business Management & Leadership"
+    },
+    {
+      "year": "2021",
+      "title": "ADR Training for SMEs in Nigeria, Ghana & Mozambique"
+    },
+    {
+      "year": "2021",
+      "title": "Surveyors Council of Nigeria Registration Certificate"
+    },
+    {
+      "year": "2021",
+      "title": "SURPAC Surveying Software Training (South Africa)"
+    },
+    {
+      "year": "2021",
+      "title": "GIS Workshop Training"
+    },
+    {
+      "year": "2021",
+      "title": "Foundation Integrity Testing (London)"
+    },
+    {
+      "year": "2021",
+      "title": "Prince2 (London) PM Certification (Foundation certified)"
+    }
+  ],
+  "workExperience": [
+    {
+      "startYear": 2025,
+      "startMonth": "Jan",
+      "endYear": null,
+      "endMonth": null,
+      "isCurrent": true,
+      "title": "Director, Internal Boundary Department",
+      "organization": "Office of The Surveyor General of the Federation (OSGOF)",
+      "location": "Abuja FCT",
+      "description": "Leading internal boundary coordination and survey management at federal level.",
+      "responsibilities": [
+        "Oversee internal boundary matters and coordination",
+        "Direct survey operations and compliance",
+        "Manage liaison with Armed Forces and Security Agencies"
+      ]
+    },
+    {
+      "startYear": 2024,
+      "startMonth": "Jan",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "isCurrent": false,
+      "title": "Director, Survey Coordination Department",
+      "organization": "Office of The Surveyor General of the Federation (OSGOF)",
+      "location": "Abuja FCT",
+      "description": "Directed national survey coordination initiatives and enforcement of survey regulations.",
+      "responsibilities": [
+        "Managed Survey Coordination Act implementation",
+        "Supervised monitoring and compliance operations",
+        "Coordinated stakeholder engagement across MDAs"
+      ]
+    },
+    {
+      "startYear": 2021,
+      "startMonth": "Jan",
+      "endYear": 2024,
+      "endMonth": "Jan",
+      "isCurrent": false,
+      "title": "Acting Director, Survey Coordination Department",
+      "organization": "Office of The Surveyor General of the Federation (OSGOF)",
+      "location": "Abuja FCT",
+      "description": "Acting leadership role in survey coordination and regulatory compliance.",
+      "responsibilities": [
+        "Coordinated national survey conference and meetings",
+        "Facilitated Survey Coordination Act review process",
+        "Managed government inter-agency survey matters"
+      ]
+    },
+    {
+      "startYear": 2019,
+      "startMonth": "Oct",
+      "endYear": 2021,
+      "endMonth": "Jan",
+      "isCurrent": false,
+      "title": "Deputy Director, Survey Coordination Department",
+      "organization": "Office of The Surveyor General of the Federation (OSGOF)",
+      "location": "Abuja FCT",
+      "description": "Deputy leadership with oversight of monitoring, compliance, and survey coordination sections.",
+      "responsibilities": [
+        "Managed monitoring and compliance operations",
+        "Coordinated survey activities across federal departments",
+        "Liaison with State Surveyors General"
+      ]
+    },
+    {
+      "startYear": 2014,
+      "startMonth": "Aug",
+      "endYear": 2019,
+      "endMonth": "Oct",
+      "isCurrent": false,
+      "title": "Adjunct Lecturer",
+      "organization": "Yaba College of Technology, Surveying & Geo-Informatics Department",
+      "location": "Yaba, Lagos",
+      "description": "Part-time academic role teaching surveying and geo-informatics subjects.",
+      "responsibilities": [
+        "Taught surveying and geo-informatics courses",
+        "Mentored students in practical applications",
+        "Contributed to curriculum development"
+      ]
+    },
+    {
+      "startYear": 2009,
+      "startMonth": "Mar",
+      "endYear": 2019,
+      "endMonth": "Oct",
+      "isCurrent": false,
+      "title": "Base Manager / Project Director & Consultant",
+      "organization": "Sidereal Geo-Services Ltd",
+      "location": "Magodo, Lagos",
+      "description": "Managed survey bases and directed multiple piling and surveying projects across Nigeria.",
+      "responsibilities": [
+        "Supervised piling work and logistics",
+        "Managed multiple concurrent projects",
+        "Conducted cadastral, topographical, and hydrographic surveys"
+      ]
+    },
+    {
+      "startYear": 2005,
+      "startMonth": "Jan",
+      "endYear": 2009,
+      "endMonth": "Feb",
+      "isCurrent": false,
+      "title": "Pupil Surveyor & Project Manager",
+      "organization": "Digital View Consultant",
+      "location": "Ipaja, Lagos",
+      "description": "Early professional role in project management and survey operations.",
+      "responsibilities": [
+        "Conducted field surveys and measurements",
+        "Managed project timelines and resources",
+        "Prepared survey documentation and reports"
+      ]
+    },
+    {
+      "startYear": 2003,
+      "startMonth": "Dec",
+      "endYear": 2004,
+      "endMonth": "Dec",
+      "isCurrent": false,
+      "title": "Survey Technician",
+      "organization": "Colak Geotechnics Ltd",
+      "location": "Ojota, Lagos",
+      "description": "Technical surveying role with field experience.",
+      "responsibilities": [
+        "Conducted field surveys",
+        "Maintained surveying equipment",
+        "Prepared survey data"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "OSGOF Collaboration Meeting with Nigerian Armed Forces and Security Agencies",
+      "startYear": 2021,
+      "startMonth": "Jan",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Abuja FCT",
+      "description": "Organized, coordinated, supervised and managed collaboration meetings with Armed Forces and security agencies.",
+      "role": "Project Coordinator & Manager"
+    },
+    {
+      "title": "Survey Coordination Act Implementation & Compliance Monitoring",
+      "startYear": 2021,
+      "startMonth": "Jan",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Abuja FCT",
+      "description": "Facilitated implementation, monitoring and compliance to Survey Coordination Act of 1962.",
+      "role": "Director"
+    },
+    {
+      "title": "National Survey Coordination Conferences",
+      "startYear": 2019,
+      "startMonth": "Oct",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Multiple locations (Abuja, Lafia, Nasarawa)",
+      "description": "Organized and managed annual survey coordination conferences with state and federal surveyors.",
+      "role": "Conference Organizer & Coordinator"
+    },
+    {
+      "title": "Nigeria Geocentric Datum (NGD 2023) Realization Project",
+      "startYear": 2021,
+      "startMonth": "Dec",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Abuja FCT",
+      "description": "National Coordinator for the realization of Nigeria's geocentric reference datum.",
+      "role": "National Coordinator"
+    },
+    {
+      "title": "Detailing, Topographical & Hydrographic Bathymetric Survey - New Era Foundation NEYOCA Camp",
+      "startYear": 2019,
+      "startMonth": "May",
+      "endYear": 2019,
+      "endMonth": "May",
+      "location": "Ibeju Lekki, Lagos State",
+      "description": "Comprehensive topographical and hydrographic survey covering 20 hectares.",
+      "role": "Survey Project Manager"
+    },
+    {
+      "title": "Detailing, Topographical & Hydrographic Bathymetric Survey - Egbin Thermal Plant",
+      "startYear": 2019,
+      "startMonth": "Jan",
+      "endYear": 2019,
+      "endMonth": "Jan",
+      "location": "Ikorodu, Lagos State",
+      "description": "Survey and mapping for Egbin Thermal Plant covering 30 hectares.",
+      "role": "Survey Project Manager"
+    },
+    {
+      "title": "Detailing, Topographical & Hydrographic Bathymetric Survey - RCCG Headquarters",
+      "startYear": 2018,
+      "startMonth": "Dec",
+      "endYear": 2018,
+      "endMonth": "Dec",
+      "location": "Ebutte-Matta, Lagos State",
+      "description": "Survey and site mapping for RCCG HQ covering 15 hectares.",
+      "role": "Survey Project Manager"
+    },
+    {
+      "title": "VITA Project - Intafact Beverage Ltd (CFA Piling)",
+      "startYear": 2014,
+      "startMonth": "Jan",
+      "endYear": 2014,
+      "endMonth": "Jan",
+      "location": "Onitsha, Anambra State",
+      "description": "CFA Piling project: 450mm piles, 10m depth, 410 number of piles.",
+      "role": "Project Manager"
+    },
+    {
+      "title": "Moscom Project - Banana Island (CFA Piling)",
+      "startYear": 2013,
+      "startMonth": "Oct",
+      "endYear": 2013,
+      "endMonth": "Oct",
+      "location": "Ikoyi, Lagos",
+      "description": "CFA Piling project: 450mm piles, 17m depth, 396 number of piles.",
+      "role": "Project Manager"
+    },
+    {
+      "title": "Osborne Bridge House College (CFA Piling)",
+      "startYear": 2013,
+      "startMonth": "Jun",
+      "endYear": 2013,
+      "endMonth": "Jun",
+      "location": "Osborne Estate Ph2, Ikoyi, Lagos",
+      "description": "CFA Piling project: 600mm piles, 37m depth, 139 number of piles.",
+      "role": "Project Manager"
+    },
+    {
+      "title": "Topographical Survey - Ogun State New Town Development",
+      "startYear": 2012,
+      "startMonth": "Jun",
+      "endYear": 2012,
+      "endMonth": "Jun",
+      "location": "Ogun State",
+      "description": "Comprehensive topographical survey of 30,000 hectares.",
+      "role": "Survey Technician"
+    },
+    {
+      "title": "Layout Survey - Adekunle Ajasin University Permanent Site",
+      "startYear": 2003,
+      "startMonth": "Jan",
+      "endYear": 2003,
+      "endMonth": "Dec",
+      "location": "Akungba Akoko, Ondo State",
+      "description": "Layout survey and site planning for university campus.",
+      "role": "Survey Technician"
+    }
+  ],
+  "appointments": [
+    {
+      "title": "Chairman, Implementation Committee on Survey Coordination Act of 1962",
+      "organization": "Including Nigerian Armed Forces and Other Security Agencies",
+      "startYear": 2023,
+      "startMonth": "Jan",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Abuja FCT",
+      "description": "Led implementation of survey coordination regulations across federal level."
+    },
+    {
+      "title": "Coordinator, National Committee on the Realisation of Nigeria Geocentric Datum (NGD 2023)",
+      "organization": "Federal Government of Nigeria",
+      "startYear": 2021,
+      "startMonth": "Dec",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Abuja FCT",
+      "description": "National focal point for geocentric datum implementation project."
+    },
+    {
+      "title": "Member, Nigeria Institution of Surveyors (NIS) Council",
+      "organization": "Nigeria Institution of Surveyors",
+      "startYear": 2021,
+      "startMonth": "Jan",
+      "endYear": 2025,
+      "endMonth": "Jan",
+      "location": "Abuja FCT",
+      "description": "Council member providing strategic oversight to professional body."
+    },
+    {
+      "title": "Member, Federal School of Surveying (FSS) Oyo Governing Council",
+      "organization": "Federal School of Surveying",
+      "startYear": 2021,
+      "startMonth": "Jan",
+      "endYear": null,
+      "endMonth": null,
+      "location": "Oyo State",
+      "description": "Governance member for leading surveying institution.",
+      "isCurrent": true
+    },
+    {
+      "title": "Chairman, Appointments, Promotions & Disciplinary Committee (AP&DC)",
+      "organization": "Federal School of Surveying (FSS) Oyo Governing Council",
+      "startYear": 2022,
+      "startMonth": "Sep",
+      "endYear": 2025,
+      "endMonth": "Feb",
+      "location": "Oyo State",
+      "description": "Chair of key governance committee for FSS."
+    },
+    {
+      "title": "Member/Secretary, Ad-hoc Committee on 2024 Surcon Registration and Professional Examinations",
+      "organization": "Surveyor Council of Nigeria (Surcon)",
+      "startYear": 2024,
+      "startMonth": "Apr",
+      "endYear": 2025,
+      "endMonth": "Feb",
+      "location": "Abuja FCT",
+      "description": "Oversight of professional registration and examination processes."
+    },
+    {
+      "title": "Publicity Secretary",
+      "organization": "Nigeria Institution of Surveyors (NIS)",
+      "startYear": 2011,
+      "startMonth": "Jan",
+      "endYear": 2013,
+      "endMonth": "Dec",
+      "location": "Lagos",
+      "description": "Communications and public relations for NIS."
+    },
+    {
+      "title": "Utility Secretary",
+      "organization": "Magodo Residence Association",
+      "startYear": 2013,
+      "startMonth": "Jan",
+      "endYear": 2019,
+      "endMonth": "Dec",
+      "location": "Lagos",
+      "description": "Administrative role for residential association."
+    }
+  ],
+  "memberships": [
+    {
+      "title": "Fellow of Nigeria Institution of Surveyors (FNIS)",
+      "status": "Fellow",
+      "yearJoined": 2002
+    },
+    {
+      "title": "Fellow of Institute of Professional Managers & Administrators (fIPMA)",
+      "status": "Fellow",
+      "yearJoined": 2015
+    },
+    {
+      "title": "Fellow of Institute of Information Management (fiim)",
+      "status": "Fellow",
+      "yearJoined": 2015
+    },
+    {
+      "title": "Fellow of Institute of Management Consultants (fIMC)",
+      "status": "Fellow",
+      "yearJoined": 2021
+    },
+    {
+      "title": "Member of Hydro Group",
+      "status": "Member",
+      "yearJoined": 2015
+    },
+    {
+      "title": "Coordinator, The Dynamic Group",
+      "status": "Coordinator",
+      "yearJoined": 2018
+    }
+  ],
+  "awards": [
+    {
+      "year": 2021,
+      "title": "Doctor of Leadership & Strategic Management (Honoris Causa)",
+      "awardingBody": "International Academic Institution"
+    },
+    {
+      "year": 2021,
+      "title": "Award of Excellence in Human Capacity Building & Development",
+      "awardingBody": "Professional Organization"
+    },
+    {
+      "year": 2021,
+      "title": "Certificate of Credence of Youth Development Association",
+      "awardingBody": "Youth Development Association"
+    },
+    {
+      "year": 2019,
+      "title": "SURCON Examiner",
+      "awardingBody": "Surveyor Council of Nigeria"
+    },
+    {
+      "year": 2019,
+      "title": "SURCON Examiner",
+      "awardingBody": "Surveyor Council of Nigeria"
+    },
+    {
+      "year": 2018,
+      "title": "Certificate of Appreciation, NIS Lagos Branch Geospatial Corner",
+      "awardingBody": "Nigeria Institution of Surveyors"
+    },
+    {
+      "year": 2017,
+      "title": "Certificate of Meritorious Service, NIS Lagos Branch",
+      "awardingBody": "Nigeria Institution of Surveyors"
+    },
+    {
+      "year": 2017,
+      "title": "Magodo Residence Association Award of Excellence",
+      "awardingBody": "Magodo Residence Association"
+    },
+    {
+      "year": 2017,
+      "title": "Recognition Award from Monbahul Hikmon Islamic Organisation",
+      "awardingBody": "Monbahul Hikmon Islamic Organisation"
+    },
+    {
+      "year": 2014,
+      "title": "Construction Industry Professionals CED Recognition Certificate",
+      "awardingBody": "Construction Industry"
+    },
+    {
+      "year": 2012,
+      "title": "Merit Award from Halal Haven Consults Ltd",
+      "awardingBody": "Halal Haven Consults Ltd"
+    },
+    {
+      "year": 2009,
+      "title": "Best Graduating Student, Surveying & Geo-Informatics",
+      "awardingBody": "University of Lagos"
+    },
+    {
+      "year": 2008,
+      "title": "Best Candidate for Law & Professional Practice",
+      "awardingBody": "Surveyor Council of Nigeria (Surcon)"
+    },
+    {
+      "year": 2002,
+      "title": "Best Graduating Student, Surveying & Geo-Informatics",
+      "awardingBody": "University of Lagos"
+    },
+    {
+      "year": 2001,
+      "title": "Surveyor O.O Craig Award as Best Pre-Final Year Student",
+      "awardingBody": "Yaba College of Technology"
+    },
+    {
+      "year": 2001,
+      "title": "Best Graduating Student, Surveying & Geo-Informatics",
+      "awardingBody": "Yaba College of Technology"
+    },
+    {
+      "year": 1997,
+      "title": "Best Graduating Student, Surveying & Geo-Informatics",
+      "awardingBody": "Yaba College of Technology"
+    }
+  ],
+  "publications": [
+    {
+      "year": 2021,
+      "title": "Managing Successful Projects",
+      "type": "Publication"
+    },
+    {
+      "year": 2021,
+      "title": "The Value of Leadership to the Management of an Organisation",
+      "type": "Publication"
+    },
+    {
+      "year": 2021,
+      "title": "Geospatial Technology for Good Governance & Anti-Corruption in Nigeria",
+      "type": "Publication"
+    },
+    {
+      "year": 2021,
+      "title": "Geospatial Information Relationships with Sustainable Development Goals",
+      "type": "Publication"
+    },
+    {
+      "year": 2021,
+      "title": "Evolution of Interstate Boundary in the Southwest Zone",
+      "type": "Publication"
+    },
+    {
+      "year": 2021,
+      "title": "Land Administration Through Geospatial Technology (Digitalization and Automation)",
+      "type": "Publication"
+    }
+  ],
+  "conferences": [
+    {
+      "year": 2017,
+      "title": "FIG Working Week"
+    },
+    {
+      "year": 2016,
+      "title": "CASLE Conference"
+    },
+    {
+      "year": 2017,
+      "title": "MCPD National"
+    },
+    {
+      "year": 2017,
+      "title": "World Hydrographic Day Celebration"
+    },
+    {
+      "year": 2018,
+      "title": "APBN 7th Summit of Professionals"
+    },
+    {
+      "year": "2017-2019",
+      "title": "MCPD Lagos State",
+      "yearRange": true
+    },
+    {
+      "year": "2002-2021",
+      "title": "NIS Annual General Meeting",
+      "yearRange": true
+    },
+    {
+      "year": "2008-2019",
+      "title": "NIS Lagos Branch Annual General Meeting",
+      "yearRange": true
+    },
+    {
+      "year": "2009-2019",
+      "title": "APPSN Lagos Branch Professional Development Workshop",
+      "yearRange": true
+    }
+  ],
+  "hobbies": [
+    "Chess",
+    "Volleyball",
+    "Travelling",
+    "Reading"
+  ]
+}
