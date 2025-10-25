@@ -1,15 +1,24 @@
-# Dr. Semiu Akanni, AYINDE - Professional Portfolio Website
+# Dr. Semiu Akanni, AYINDE - Professional Portfolio
 
-A modern, responsive, and accessible portfolio website built with Next.js and Tailwind CSS for Dr. Semiu Akanni, AYINDE - Director at the Office of The Surveyor General of the Federation (OSGOF).
+A modern, image-rich, responsive, and accessible portfolio website built with Next.js and Tailwind CSS for Dr. Semiu Akanni, AYINDE - Director at the Office of The Surveyor General of the Federation (OSGOF).
+
+## ✨ What's New (v2.0)
+
+- 🖼️ **Professional Images** - High-quality portraits and professional photos
+- 🎨 **Redesigned Homepage** - Modern image-first hero layout
+- ⚡ **Enhanced Visual Design** - Better spacing, colors, and animations
+- ❌ **No PDF Downloads** - CV content integrated into About page
+- 📱 **Improved Mobile UX** - Better responsive layouts and interactions
 
 ## Features
 
-✅ **Fully Responsive Design** - Optimized for mobile (320px), tablet, and desktop (1440px+)  
-✅ **Accessible** - WCAG 2.1 AA compliant with semantic HTML, ARIA labels, and keyboard navigation  
-✅ **SEO Optimized** - Meta tags, Open Graph, JSON-LD structured data, and robots.txt  
-✅ **Contact Form** - Email integration with rate limiting and spam protection (honeypot)  
-✅ **PDF CV Download** - Dynamically generated professional CV in PDF format  
-✅ **Performance Optimized** - Lighthouse score target ≥ 90  
+✅ **Professional Images** - Showcase with responsive image gallery
+✅ **Fully Responsive Design** - Optimized for mobile (320px), tablet, and desktop (1440px+)
+✅ **Accessible** - WCAG 2.1 AA compliant with semantic HTML, ARIA labels, and keyboard navigation
+✅ **SEO Optimized** - Meta tags, Open Graph, JSON-LD structured data, and robots.txt
+✅ **Contact Form** - Email integration with rate limiting and spam protection (honeypot)
+✅ **CV Integration** - Complete curriculum vitae on About page
+✅ **Performance Optimized** - Lighthouse score target ≥ 90
 ✅ **Production Ready** - Ready for deployment to Vercel  
 
 ## Pages
