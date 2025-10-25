@@ -1,10 +1,27 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close menu when navigating
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, []);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -14,36 +31,78 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
-      <nav className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center gap-4">
-        {/* Logo and Brand */}
+    <header
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        backgroundColor: 'var(--color-bg)',
+        borderBottom: `1px solid ${isScrolled ? 'var(--color-border)' : 'transparent'}`,
+        boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
+        transition: 'all var(--transition-base)',
+      }}
+    >
+      <nav
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: 'var(--sp-md)',
+          gap: 'var(--sp-md)',
+        }}
+      >
+        {/* Logo & Brand */}
         <Link
           href="/"
-          className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity flex-shrink-0"
-          aria-label="Home"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 'var(--sp-sm)',
+            textDecoration: 'none',
+            color: 'var(--color-text)',
+            fontWeight: 'var(--font-weight-bold)',
+            transition: 'opacity var(--transition-base)',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+          <div style={{ position: 'relative', width: '40px', height: '40px' }}>
             <Image
               src="/logo.png"
               alt="Dr. Semiu Akanni"
               fill
-              className="object-contain"
+              style={{ objectFit: 'contain' }}
               priority
             />
           </div>
-          <span className="hidden sm:inline text-lg sm:text-xl font-bold text-primary-600">
+          <span style={{ fontSize: 'var(--font-lg)', fontWeight: 'var(--font-weight-bold)' }}>
             Dr. Semiu Akanni
           </span>
-          <span className="sm:hidden text-sm font-bold text-primary-600">SA</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8">
+        {/* Desktop Nav */}
+        <div
+          style={{
+            display: 'none',
+            gap: 'var(--sp-xl)',
+            '@media (min-width: 768px)': {
+              display: 'flex',
+            },
+          }}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              style={{
+                color: 'var(--color-text-light)',
+                fontWeight: 'var(--font-weight-medium)',
+                transition: 'color var(--transition-base)',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-accent)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-light)')}
             >
               {link.label}
             </Link>
@@ -53,35 +112,67 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          style={{
+            display: 'none',
+            background: 'none',
+            border: 'none',
+            fontSize: '24px',
+            cursor: 'pointer',
+            padding: 'var(--sp-sm)',
+            '@media (max-width: 767px)': {
+              display: 'block',
+            },
+          }}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? (
-            <FiX className="w-6 h-6" />
-          ) : (
-            <FiMenu className="w-6 h-6" />
-          )}
+          {isMenuOpen ? '✕' : '☰'}
         </button>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 md:hidden shadow-lg">
-            <div className="px-4 py-4 space-y-3 flex flex-col">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-700 hover:text-primary-600 transition-colors font-medium py-2 px-2 rounded hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </nav>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            backgroundColor: 'var(--color-bg)',
+            borderBottom: `1px solid var(--color-border)`,
+            boxShadow: 'var(--shadow-md)',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: 'var(--sp-md)',
+            gap: 'var(--sp-sm)',
+          }}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              style={{
+                color: 'var(--color-text-light)',
+                padding: 'var(--sp-sm)',
+                borderRadius: 'var(--radius-md)',
+                transition: 'all var(--transition-base)',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--color-bg-light)';
+                e.currentTarget.style.color = 'var(--color-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'var(--color-text-light)';
+              }}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </header>
   );
 }
